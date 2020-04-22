@@ -1,72 +1,71 @@
-# Quick start
+# 快速上手
 
-## Introduction
+## 介绍
 
-BEM (Block, Element, Modifier) is a component-based approach to web development.
-The idea behind it is to divide the user interface into independent blocks. This makes interface development easy and fast even with a complex UI, and it allows reuse of existing code without copying and pasting.
+BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它背后的思想是将用户界面划分成独立的块。这使得界面开发变得简单而快速，即使是复杂的用户界面，它也可以重复使用现有的代码而不需要复制和粘贴。
 
-## Contents
+## 内容
 
-* [Block](#block)
-* [Element](#element)
-* [Should I create a block or an element?](#should-i-create-a-block-or-an-element)
-* [Modifier](#modifier)
-* [Mix](#mix)
-* [File structure](#file-structure)
+* [块（Block）](#块（block）)
+* [元素（Element）](#元素（element）)
+* [我应该创建一个区块（Block）还是元素（Element）？](#我应该创建一个区块（block）还是元素（element）？)
+* [修饰符（Modifier）](#修饰符（modifier）)
+* [混合（Mix）](#混合（mix）)
+* [文件结构（file-structure）](#文件结构（file-structure）)
 
-## Block
+## 块（Block）
 
-A functionally independent page component that can be reused. In HTML, blocks are represented by the `class` attribute.
+一个功能独立的页面组件，可以重复使用。在HTML中，块用 `class` 属性表示。
 
-Features:
+特征：
 
-* The [block name](../naming-convention/naming-convention.en.md#block-name) describes its purpose ("What is it?" — `menu` or `button`), not its state ("What does it look like?" — `red` or `big`).
+* [块名](/naming-convention#block-name)描述它的目的（“它是什么？” - `menu` 或 `button`），而不是它的状态（“它看起来像什么？” - `red` 或 `big`）。
 
-**Example**
+**例子**
 
 ```html
-<!-- Correct. The `error` block is semantically meaningful -->
+<!-- 正确。`error` 块在语义上是有意义的 -->
 <div class="error"></div>
 
-<!-- Incorrect. It describes the appearance -->
+<!-- 不正确。它描述的是外观 -->
 <div class="red-text"></div>
 ```
 
-* The block shouldn't influence its environment,  meaning  you shouldn't set the external geometry (margin) or positioning for the block.
-* You also shouldn't use CSS tag or `ID` selectors when using BEM.
+* 块不应该影响它的环境，这意味着你不应该为块设置外部几何体（margin）或定位。
+* 在使用BEM时，你也不应该使用CSS标签或`ID`选择器。
 
-This ensures the necessary independence for reusing blocks or moving them from place to place.
+这样可以确保在重用块或将块从一个地方移动到另一个地方的必要独立性。
 
-### Guidelines for using blocks
+### 块（Blocks）的使用指南
 
-#### Nesting
+#### 嵌套（Nesting）
 
-* Blocks can be nested in each other.
-* You can have any number of nesting levels.
+* 块之间可以相互嵌套。
+* 你可以有任意数量的嵌套级别。
 
-**Example**
+**例子**
 
 ```html
-<!-- `header` block -->
+<!-- `header` 块 -->
 <header class="header">
-    <!-- Nested `logo` block -->
+    <!-- 嵌套的 `logo` 块 -->
     <div class="logo"></div>
 
-    <!-- Nested `search-form` block -->
+    <!-- 嵌套的 `search-form` 块 -->
     <form class="search-form"></form>
 </header>
 ```
 
-## Element
+## 元素（Element）
 
-A composite part of a block that can't be used separately from it.
+块的复合部分，不能与之分开使用。
 
-Features:
+特征:
 
-* The [element name](../naming-convention/naming-convention.en.md#element-name) describes its purpose ("What is this?" — `item`, `text`, etc.), not its state ("What type, or what does it look like?" — `red`, `big`, etc.).
-* The structure of an element's full name is `block-name__element-name`. The element name is separated from the block name with a double underscore (`__`).
+* [元素名称](/naming-convention#element-name)描述的是它的目的（「这是什么？」-- `项` 、 `文本` 等），而不是它的状态（「什么类型，或者说它是什么样子的？」-- `red`、`big` 等）。
+* 元素全名的结构是 `block-name__element-name`。元素名与块名之间用双下划线(__)分隔。
 
-**Example**
+**例子**
 
 ```html
 <!-- `search-form` block -->
@@ -79,23 +78,23 @@ Features:
 </form>
 ```
 
-### Guidelines for using elements
+### 元素（element）的使用指南
 
-* [Nesting](#nesting-1)
-* [Membership](#membership)
-* [Optionality](#optionality)
+* [元素嵌套（Nesting）](#元素嵌套（nesting）)
+* [成员（Membership）](#成员（membership）)
+* [选择性（Optionality）](#选择性（optionality）)
 
-#### Nesting
+#### 元素嵌套（Nesting）
 
-* Elements can be nested inside each other.
-* You can have any number of nesting levels.
-* An element is always part of a block, not another element. This means that element names can't define a hierarchy such as `block__elem1__elem2`.
+* 元素（Elements）之间可以相互嵌套。
+* 你可以有任意数量的嵌套级别。
+* 元素永远是块的一部分，而不是另一个元素。这意味着元素名称不能定义一个层次结构，比如 `block__elem1__elem2` 。
 
-**Example**
+**例子**
 
 ```html
 <!--
-    Correct. The structure of the full element name follows the pattern:
+    正确。完整元素名称的结构遵循以下模式：
     `block-name__element-name`
 -->
 <form class="search-form">
@@ -107,25 +106,25 @@ Features:
 </form>
 
 <!--
-    Incorrect. The structure of the full element name doesn't follow the pattern:
+    不正确。完整元素名称的结构不符合模式：
     `block-name__element-name`
 -->
 <form class="search-form">
     <div class="search-form__content">
-        <!-- Recommended: `search-form__input` or `search-form__content-input` -->
+        <!-- 推荐: `search-form__input` 或 `search-form__content-input` -->
         <input class="search-form__content__input">
 
-        <!-- Recommended: `search-form__button` or `search-form__content-button` -->
+        <!-- 推荐: `search-form__button` 或 `search-form__content-button` -->
         <button class="search-form__content__button">Search</button>
     </div>
 </form>
 ```
 
-The block name defines the namespace, which [guarantees that the](../naming-convention/naming-convention.en.md#element-name) elements are dependent on the block (`block__elem`).
+块名定义了命名空间，[保证](/naming-convention#element-name) 了元素对块的依赖性（`block__elem`）。
 
-A block can have a nested structure of elements in the DOM tree:
+一个块可以在DOM树上有一个元素的嵌套结构:
 
-**Example**
+**例子**
 
 ```html
 <div class="block">
@@ -137,9 +136,9 @@ A block can have a nested structure of elements in the DOM tree:
 </div>
 ```
 
-However, this block structure is always represented as a flat list of elements in the BEM methodology:
+然而，在BEM方法中，这种块状结构总是以元素的平面列表的形式表示:
 
-**Example**
+**例子**
 
 ```css
 .block {}
@@ -148,9 +147,9 @@ However, this block structure is always represented as a flat list of elements i
 .block__elem3 {}
 ```
 
-This allows you to change a block's DOM structure without making changes in the code for each separate element:
+这允许你改变一个块的DOM结构，而不需要对每个独立元素的代码进行修改。:
 
-**Example**
+**例子**
 
 ```html
 <div class="block">
@@ -162,27 +161,27 @@ This allows you to change a block's DOM structure without making changes in the 
 </div>
 ```
 
-The block's structure changes, but the rules for the elements and their names remain the same.
+块的结构发生了变化，但元素及其名称的规则不变。
 
-#### Membership
+#### 成员（Membership）
 
-An element is **always part of a block**, and you shouldn't use it separately from the block.
+元素（Element）**始终是块（Block）的一部分**，你不应该把它和块分开使用。
 
-**Example**
+**例子**
 
 ```html
-<!-- Correct. Elements are located inside the `search-form` block -->
+<!-- 正确。元素位于 `search-form` 块内 -->
 <!-- `search-form` block -->
 <form class="search-form">
-    <!-- `input` element in the `search-form` block -->
+    <!-- `search-form`块中的 `input` -->
     <input class="search-form__input">
 
-    <!-- `button` element in the `search-form` block -->
+    <!-- `search-form`块中的 `button` -->
     <button class="search-form__button">Search</button>
 </form>
 
 <!--
-    Incorrect. Elements are located outside of the context of
+    不正确. Elements are located outside of the context of
     the `search-form` block
 -->
 <!-- `search-form` block -->
@@ -196,48 +195,48 @@ An element is **always part of a block**, and you shouldn't use it separately fr
 <button class="search-form__button">Search</button>
 ```
 
-#### Optionality
+#### 选择性（Optionality）
 
-An element is an optional block component. Not all blocks have elements.
+元素是一个可选的块组件。不是所有的块都有元素。
 
-**Example**
+**例子**
 
 ```html
-<!-- `search-form` block -->
+<!-- `search-form` 块 -->
 <div class="search-form">
-    <!-- `input` block -->
+    <!-- `input` 块 -->
     <input class="input">
 
-    <!-- `button` block -->
+    <!-- `button` 块 -->
     <button class="button">Search</button>
 </div>
 ```
 
-## Should I create a block or an element?
+## 我应该创建一个区块（Block）还是元素（Element）？
 
 
-### Create a block
+### 创建一个区块
 
-If a section of code might be reused and it doesn't depend on other page components being implemented.
+如果一段代码可能会被重用，并且它不依赖于其他页面组件的实现。
 
-### Create an element
+### 创建一个元素
 
-If a section of code can't be used separately without the parent entity (the block).
+如果一段代码不能脱离父实体（块）而单独使用。
 
-The exception is elements that must be divided into smaller parts – subelements – in order to simplify development. In the BEM methodology, [you can't create elements of elements](#nesting-1). In a case like this, instead of creating an element, you need to create a service block.
+为了简化开发，必须将元素分成较小的部分（子元素），这是一个例外。在BEM方法论中，[你不能创建元素中的元素](#嵌套（nesting-1）)。在这种情况下，你需要创建一个服务块，而不是创建一个元素。
 
-## Modifier
+## 修饰符（Modifier）
 
-An entity that defines the appearance, state, or behavior of a block or element.
+定义了一个块或元素的外观、状态或行为的实体。
 
-Features:
+特征:
 
-* The [modifier name](../naming-convention/naming-convention.en.md#block-modifier-name) describes its appearance ("What size?" or "Which theme?" and so on — `size_s` or `theme_islands`), its state ("How is it different from the others?" — `disabled`, `focused`, etc.) and its behavior ("How does it behave?" or "How does it respond to the user?" — such as `directions_left-top`).
+* The [modifier name](/naming-convention#block-modifier-name) describes its appearance ("What size?" or "Which theme?" and so on — `size_s` or `theme_islands`), its state ("How is it different from the others?" — `disabled`, `focused`, etc.) and its behavior ("How does it behave?" or "How does it respond to the user?" — such as `directions_left-top`).
 * The modifier name is separated from the block or element name by a single underscore (`_`).
 
-### Types of modifiers
+### 修饰符类型
 
-#### Boolean
+#### 布尔（Boolean）
 
 * Used when only the presence or absence of the modifier is important, and its value is irrelevant. For example, `disabled`. If a Boolean modifier is present, its value is assumed to be `true`.
 
@@ -246,7 +245,7 @@ Features:
   * `block-name_modifier-name`
   * `block-name__element-name_modifier-name`
 
-**Example**
+**例子**
 
 ```html
 <!-- The `search-form` block has the `focused` Boolean modifier -->
@@ -258,7 +257,7 @@ Features:
 </form>
 ```
 
-#### Key-value
+#### 键-值（Key-value）
 
 * Used when the modifier value is important. For example, "a menu with the `islands` design theme": `menu_theme_islands`.
 
@@ -267,7 +266,7 @@ Features:
   * `block-name_modifier-name_modifier-value`
   * `block-name__element-name_modifier-name_modifier-value`
 
-**Example**
+**例子**
 
 ```html
 <!-- The `search-form` block has the `theme` modifier with the value `islands` -->
@@ -293,18 +292,17 @@ Features:
 </form>
 ```
 
-### Guidelines for using modifiers
+### 修饰符（Modifiers）的使用指南
 
-#### A modifier can't be used alone
+#### 修饰符不能单独使用
 
-From the BEM perspective, a modifier can't be used in isolation from the modified block or element. A modifier should change the appearance, behavior, or state of the entity, not replace it.
+从BEM的角度来看，修饰符不能脱离被修改的块或元素单独使用。修饰符应该改变实体的外观、行为或状态，而不是取代它。
 
-**Example**
+**例子**
 
 ```html
 <!--
-    Correct. The `search-form` block has the `theme` modifier with
-    the value `islands`
+    正确. `search-form`块有 `theme` 修饰符，值为"islands"。
 -->
 <form class="search-form search-form_theme_islands">
     <input class="search-form__input">
@@ -312,7 +310,7 @@ From the BEM perspective, a modifier can't be used in isolation from the modifie
     <button class="search-form__button">Search</button>
 </form>
 
-<!-- Incorrect. The modified class `search-form` is missing -->
+<!-- 不正确. 缺少修改后的 class `search-form` -->
 <form class="search-form_theme_islands">
     <input class="search-form__input">
 
@@ -320,18 +318,18 @@ From the BEM perspective, a modifier can't be used in isolation from the modifie
 </form>
 ```
 
-> [Why write the block name in the names of modifiers and elements?](../../faq/faq.en.md#why-include-the-block-name-in-modifier-and-element-names)
+> [为什么要把块名写在修饰符和元素名称中？](../../faq/faq#why-include-the-block-name-in-modifier-and-element-names)
 
-## Mix
+## 混合（Mix）
 
-A technique for using different BEM entities on a single DOM node.
+在一个DOM节点上使用不同的BEM实体的技术。
 
 Mixes allow you to:
 
 * Combine the behavior and styles of multiple entities without duplicating code.
 * Create semantically new UI components based on existing ones.
 
-**Example**
+**例子**
 
 ```html
 <!-- `header` block -->
@@ -348,11 +346,11 @@ In this example, we combined the behavior and styles of the `search-form` block 
 This approach allows us to set the external geometry and positioning in the `header__search-form` element, while the `search-form` block itself remains universal.
 As a result, we can use the block in any other environment, because it doesn't specify any padding. This is why we can call it independent.
 
-## File structure
+## 文件结构（file-structure）
 
-The component approach adopted in the BEM methodology also applies to [projects in the file structure](../filestructure/filestructure.en.md#file-structure-organization). The implementations of blocks, elements, and modifiers are divided into independent technology files, which means we can connect them individually.
+BEM方法中采用的组件方法同样适用于[文件结构中的项目](/filestructure/#file-structure-organization)。块、元素和修改器的实现方式被划分为独立的技术文件，也就是说我们可以将它们单独连接起来。
 
-Features:
+特征:
 
 * A single block corresponds to a single directory.
 * The block and the directory have the same name. For example, the `header` block is in the `header/` directory, and the `menu` block is in the `menu/` directory.
@@ -362,7 +360,7 @@ Features:
 * Names of modifier directories begin with a single underscore (`_`). For example, `header/_fixed/` and `menu/_theme_islands/`.
 * Implementations of elements and modifiers are divided into separate technology files. For example, `header__input.js` and `header_theme_islands.css`.
 
-**Example**
+**例子**
 
 ```files
 search-form/                           # Directory of the `search-form`
@@ -394,9 +392,9 @@ search-form/                           # Directory of the `search-form`
 
 This file structure makes it easy to support the code and re-use it.
 
-> The branched file structure assumes that in production the code will be [assembled into shared project files](../build/build.en.md#building-a-bem-project).
+> The branched file structure assumes that in production the code will be [assembled into shared project files](../build/build#building-a-bem-project).
 
-You aren't required to follow the [recommended file structure](../filestructure/filestructure.en.md#nested). You can use any alternative project structure that follows the BEM principles for organizing the file structure, such as:
+You aren't required to follow the [recommended file structure](../filestructure/filestructure#nested). You can use any alternative project structure that follows the BEM principles for organizing the file structure, such as:
 
-* [Flat](../filestructure/filestructure.en.md#flat)
-* [Flex](../filestructure/filestructure.en.md#flex)
+* [Flat](../filestructure/filestructure#flat)
+* [Flex](../filestructure/filestructure#flex)

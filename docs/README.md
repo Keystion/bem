@@ -2,16 +2,16 @@
 home: true
 heroImage: https://webclown.net/favicon.ico
 heroText: BEM
-tagline: BEM — Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
+tagline: BEM — 是一种方法论，可以帮助你在前端开发中创建可重用的组件和代码共享。
 actionText: 快速上手 →
 actionLink: /quick-start/
 features:
-- title: Easy
-  details: To use BEM, you only need to employ BEM’s naming convention.
-- title: Modular
-  details: Independent blocks and CSS selectors make your code reusable and modular.
-- title: Flexible
-  details: Using BEM, methodologies and tools can be recomposed and configured the way you like.
+- title: 简单的
+  details: 要使用BEM，你只需要使用BEM的命名规则。
+- title: 模块化
+  details: 独立的块和CSS选择器使您的代码可重用和模块化。
+- title: 灵活的
+  details: 使用BEM，方法论和工具可以以你喜欢的方式重新组合和配置。
 footer: MIT Licensed | Copyright © 2018-present Webclown
 ---
 <!-- <style>
