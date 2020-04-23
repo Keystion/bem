@@ -16,7 +16,7 @@ module.exports = {
             ['/', '首页'],
             ['/quick-start/', '快速上手'],
             ['/key-concepts/', '核心概念'],
-            ['/naming-convention/', '命名规则'],
+            ['/naming-convention/', '命名约定'],
             ['/bem-for-css/', 'CSS'],
             ['/bem-for-html/', 'HTML'],
             ['/bem-for-js/', 'JavaScript'],

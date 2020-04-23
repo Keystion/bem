@@ -1,4 +1,4 @@
-# Building a BEM project
+# 建立一个BEM项目
 
 * [Introduction](#introduction)
 * [Build stages](#build-stages)
@@ -11,7 +11,7 @@ In a BEM project, the code is divided into [separate files](../filestructure/fil
 
 **Example**
 
-![Building a BEM project](/build/build__bem-project.svg)
+![建立一个BEM项目](/build/build__bem-project.svg)
 
 The build performs the following tasks:
 

@@ -1,4 +1,4 @@
-# 命名规则
+# 命名约定
 
 The name of a BEM entity is unique. The same BEM entity always has the same name in all technologies (CSS, JavaScript, and HTML). The primary purpose of the naming convention is to give names meaning so that they are as informative as possible for the developer.
 

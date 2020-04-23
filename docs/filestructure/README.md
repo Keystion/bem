@@ -14,9 +14,15 @@ The choice is up to the developer.
 
 ## Guidelines for the file structure of a BEM project
 
-* [Projects consist of redefinition levels](#projects-consist-of-redefinition-levels)
-* [Block implementation consists of separate files](#block-implementation-consists-of-separate-files)
-* [Files are grouped by meaning, not by type](#files-are-grouped-by-meaning-not-by-type)
+- [File structure organization](#file-structure-organization)
+  - [Guidelines for the file structure of a BEM project](#guidelines-for-the-file-structure-of-a-bem-project)
+    - [Projects consist of redefinition levels](#projects-consist-of-redefinition-levels)
+    - [Block implementation consists of separate files](#block-implementation-consists-of-separate-files)
+    - [Files are grouped by meaning, not by type](#files-are-grouped-by-meaning-not-by-type)
+  - [Approaches](#approaches)
+    - [嵌套](#%e5%b5%8c%e5%a5%97)
+    - [扁平化](#%e6%89%81%e5%b9%b3%e5%8c%96)
+    - [灵活性](#%e7%81%b5%e6%b4%bb%e6%80%a7)
 
 ### Projects consist of redefinition levels
 
@@ -97,7 +103,7 @@ project
 
 ## Approaches 
 
-### Nested
+### 嵌套
 
 This is the classic file structure approach for BEM projects:
 
@@ -130,7 +136,7 @@ The `nested` approach is used in the file structure of BEM libraries:
 * [bem-core](https://github.com/bem/bem-core/tree/v4.2.1/common.blocks/page)
 * [bem-components](https://github.com/bem/bem-components/tree/v6.0.0/common.blocks/button)
 
-### Flat
+### 扁平化
 
 Simplified structure for the file structure:
 
@@ -152,7 +158,7 @@ project
         popup.png
 ```
 
-### Flex
+### 灵活性
 
 The most flexible approach is a combination of `flat` and `nested`. Blocks with a branched file structure used the `nested` approach. Simple blocks use the `flat` approach. 
 
