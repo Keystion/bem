@@ -19,7 +19,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征：
 
-* [块名](/naming-convention#block-name)描述它的目的（“它是什么？” - `menu` 或 `button`），而不是它的状态（“它看起来像什么？” - `red` 或 `big`）。
+* [块名](/naming-convention#块名称)描述它的目的（“它是什么？” - `menu` 或 `button`），而不是它的状态（“它看起来像什么？” - `red` 或 `big`）。
 
 **例子**
 
@@ -62,7 +62,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征:
 
-* [元素名称](/naming-convention#element-name)描述的是它的目的（「这是什么？」-- `项` 、 `文本` 等），而不是它的状态（「什么类型，或者说它是什么样子的？」-- `red`、`big` 等）。
+* [元素名称](/naming-convention#元素名称)描述的是它的目的（「这是什么？」-- `项` 、 `文本` 等），而不是它的状态（「什么类型，或者说它是什么样子的？」-- `red`、`big` 等）。
 * 元素全名的结构是 `block-name__element-name`。元素名与块名之间用双下划线(__)分隔。
 
 **例子**
@@ -171,27 +171,26 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 ```html
 <!-- 正确。元素位于 `search-form` 块内 -->
-<!-- `search-form` block -->
+<!-- `search-form` 块 -->
 <form class="search-form">
-    <!-- `search-form`块中的 `input` -->
+    <!-- `search-form` 块中的 `input` -->
     <input class="search-form__input">
 
-    <!-- `search-form`块中的 `button` -->
+    <!-- `search-form` 块中的 `button` -->
     <button class="search-form__button">Search</button>
 </form>
 
 <!--
-    不正确. Elements are located outside of the context of
-    the `search-form` block
+    不正确. 元素位于 `search-form` 块的上下文之外。
 -->
-<!-- `search-form` block -->
+<!-- `search-form` 块 -->
 <form class="search-form">
 </form>
 
-<!-- `input` element in the `search-form` block -->
+<!-- `search-form` 块中的 `input` 元素 -->
 <input class="search-form__input">
 
-<!-- `button` element in the `search-form` block-->
+<!-- `search-form` 块中的 `button` 元素-->
 <button class="search-form__button">Search</button>
 ```
 
@@ -231,16 +230,16 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征:
 
-* The [modifier name](/naming-convention#block-modifier-name) describes its appearance ("What size?" or "Which theme?" and so on — `size_s` or `theme_islands`), its state ("How is it different from the others?" — `disabled`, `focused`, etc.) and its behavior ("How does it behave?" or "How does it respond to the user?" — such as `directions_left-top`).
-* The modifier name is separated from the block or element name by a single underscore (`_`).
+* [修饰符名称](/naming-convention#块的修饰符名称)描述了它的外观（“什么大小？”或 “哪个主题？” 等--`size_s`或 `theme_islands`）、状态（“它和其他的有什么不同？”--`disabled`、`focus`等）和行为（“它的行为如何？”或“它是如何响应用户的？” - 如 `directions_left-top`）。)
+* 修饰符名称与块或元素名称之间用一个下划线(`_`)隔开。
 
 ### 修饰符类型
 
 #### 布尔（Boolean）
 
-* Used when only the presence or absence of the modifier is important, and its value is irrelevant. For example, `disabled`. If a Boolean modifier is present, its value is assumed to be `true`.
+当只有修饰符的存在或不存在是重要的，其值无关紧要时使用。例如，`disabled`。如果存在一个布尔型修饰符，其值被认为是 `true`。
 
-* The structure of the modifier's full name follows the pattern:
+* 修饰符的全称的结构遵循着这样的规律：
 
   * `block-name_modifier-name`
   * `block-name__element-name_modifier-name`
@@ -248,20 +247,20 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 **例子**
 
 ```html
-<!-- The `search-form` block has the `focused` Boolean modifier -->
+<!-- `search-form` 块有 `focused` 布尔修饰符。 -->
 <form class="search-form search-form_focused">
     <input class="search-form__input">
 
-    <!-- The `button` element has the `disabled` Boolean modifier -->
+    <!-- `button` 元素具有 `disabled` 布尔修改器 -->
     <button class="search-form__button search-form__button_disabled">Search</button>
 </form>
 ```
 
 #### 键-值（Key-value）
 
-* Used when the modifier value is important. For example, "a menu with the `islands` design theme": `menu_theme_islands`.
 
-* The structure of the modifier's full name follows the pattern:
+* 当修改器值很重要时使用。例如，“以 `islands` 为设计主题的菜单”：`menu_theme_islands`。
+* 修饰符的全称的结构遵循这个模式：
 
   * `block-name_modifier-name_modifier-value`
   * `block-name__element-name_modifier-name_modifier-value`
@@ -269,15 +268,16 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 **例子**
 
 ```html
-<!-- The `search-form` block has the `theme` modifier with the value `islands` -->
+
+<!-- `search-form` 块有 `theme` 修饰符，值为 `islands` -->
 <form class="search-form search-form_theme_islands">
     <input class="search-form__input">
 
-    <!-- The `button` element has the `size` modifier with the value `m` -->
+    <!-- `button` 元素有 `size` 修改符，其值为 `m` -->
     <button class="search-form__button search-form__button_size_m">Search</button>
 </form>
 
-<!-- You can't use two identical modifiers with different values simultaneously -->
+<!-- 你不能同时使用两个相同的修饰符，但值不同的修饰符也不能同时使用 -->
 <form class="search-form
              search-form_theme_islands
              search-form_theme_lite">
@@ -324,27 +324,28 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 在一个DOM节点上使用不同的BEM实体的技术。
 
-Mixes allow you to:
+混合允许：
 
-* Combine the behavior and styles of multiple entities without duplicating code.
-* Create semantically new UI components based on existing ones.
+* 结合多个实体的行为和风格，无需重复代码。
+* 在现有的基础上创建新的UI组件。
 
 **例子**
 
 ```html
-<!-- `header` block -->
+<!-- `header` 块 -->
 <div class="header">
     <!--
-        The `search-form` block is mixed with the `search-form` element
-        from the `header` block
+        `search-form` 块与 `header` 块中的 `search-form` 元素混合在一起
     -->
     <div class="search-form header__search-form"></div>
 </div>
 ```
 
-In this example, we combined the behavior and styles of the `search-form` block and the `search-form` element from the `header` block.
-This approach allows us to set the external geometry and positioning in the `header__search-form` element, while the `search-form` block itself remains universal.
-As a result, we can use the block in any other environment, because it doesn't specify any padding. This is why we can call it independent.
+在这个例子中，我们将 "search-form" 块和 "header" 块中的 "search-form" 元素的行为和样式结合在一起。
+
+这种方法允许我们在 `header__search-form` 元素中设置外部的几何形状和定位，而 `search-form` 块本身仍然是通用的。
+
+因此，我们可以在任何其他环境中使用该块，因为它没有指定任何padding。这就是为什么我们可以把它叫做独立的原因。
 
 ## 文件结构（file-structure）
 
@@ -352,49 +353,45 @@ BEM方法中采用的组件方法同样适用于[文件结构中的项目](/file
 
 特征:
 
-* A single block corresponds to a single directory.
-* The block and the directory have the same name. For example, the `header` block is in the `header/` directory, and the `menu` block is in the `menu/` directory.
-* A block's implementation is divided into separate technology files. For example, `header.css` and `header.js`.
-* The block directory is the root directory for the subdirectories of its elements and modifiers.
-* Names of element directories begin with a double underscore (`__`). For example, `header/__logo/` and `menu/__item/`.
-* Names of modifier directories begin with a single underscore (`_`). For example, `header/_fixed/` and `menu/_theme_islands/`.
-* Implementations of elements and modifiers are divided into separate technology files. For example, `header__input.js` and `header_theme_islands.css`.
+* 一个块对应于一个目录。
+* 块和目录有相同的名称。例如：`header` 块在 `header/` 目录下，而 `menu` 块在 `menu/` 目录下。
+* 一个块的实现被划分为不同的技术文件。例如：`header.css` 和 `header.js`。
+* 块目录是其元素和修改器的子目录的根目录。
+* 元素目录的名称以双下划线（ `__` ）开头。例如：`header/__logo/` 和 `menu/__item/`。
+* 修改器目录的名称以单下划线( `_` )开始。例如：`header/_fixed/` 和 `menu/_theme_islands/`。
+* 元素和修饰符的实现被划分为单独的技术文件。例如：`header__input.js` 和 `header_theme_islands.css`。
 
 **例子**
 
 ```files
-search-form/                           # Directory of the `search-form`
+search-form/                           # `search-form` 的目录
 
-    __input/                           # Subdirectory of the `search-form__input`
-        search-form__input.css         # CSS implementation of the
-                                       # `search-form__input` element
-        search-form__input.js          # JavaScript implementation of the
-                                       # `search-form__input` element
+    __input/                           # `search-form__input` 的子目录。
 
-    __button/                          # Subdirectory of the `search-form__button`
-                                       # element
+        search-form__input.css         # `search-form__input` 元素的CSS实现
+
+        search-form__input.js          # `search-form__input` 元素的JS实现
+
+    __button/                          # `search-form__button` 元素的子目录
+
         search-form__button.css
         search-form__button.js
 
-    _theme/                            # Subdirectory of the `search-form_theme`
-                                       # modifier
-        search-form_theme_islands.css  # CSS implementation of the `search-form` block
-                                       # that has the `theme` modifier with the value
-                                       # `islands`
-        search-form_theme_lite.css     # CSS implementation of the `search-form` block
-                                       # that has the `theme` modifier with the value
-                                       # `lite`
+    _theme/                            # `search-form_theme` 修饰符的子目录
 
-    search-form.css                    # CSS implementation of the `search-form` block
-    search-form.js                     # JavaScript implementation of the
-                                       # `search-form` block
+        search-form_theme_islands.css  # 具有 `islands` 修改符的 `search-form` 块的CSS实现，其值为 `islands`。
+
+        search-form_theme_lite.css     # `search-form` 块的CSS实现，该块的`islands`修改符的值为`lite`。
+
+    search-form.css                    # `search-form` 块的CSS实现
+    search-form.js                     # `search-form` 块的JS实现
 ```
 
-This file structure makes it easy to support the code and re-use it.
+这种文件结构使得代码很容易支持和重用。
 
-> The branched file structure assumes that in production the code will be [assembled into shared project files](../build/build#building-a-bem-project).
+> 分支的文件结构假定在生产中，代码将被[组装成共享的项目文件](/build/#建立一个BEM项目)。
 
-You aren't required to follow the [recommended file structure](../filestructure/filestructure#nested). You can use any alternative project structure that follows the BEM principles for organizing the file structure, such as:
+你不需要遵循[推荐的文件结构](/filestructure/#嵌套)。你可以使用任何遵循BEM原则的替代项目结构来组织文件结构，例如：
 
-* [Flat](../filestructure/filestructure#flat)
-* [Flex](../filestructure/filestructure#flex)
+* [扁平化](/filestructure/#扁平化)
+* [灵活性](/filestructure/#灵活性)
