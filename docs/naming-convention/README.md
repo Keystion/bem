@@ -1,43 +1,44 @@
 # 命名约定
 
-The name of a BEM entity is unique. The same BEM entity always has the same name in all technologies (CSS, JavaScript, and HTML). The primary purpose of the naming convention is to give names meaning so that they are as informative as possible for the developer.
+BEM实体的名称是唯一的。同一BEM实体在所有技术（CSS 、 JavaScript 和 HTML）中总是有相同的名称。命名惯例的主要目的是赋予名称以意义，使其尽可能地为开发者提供信息。
 
-Compare the same name for a CSS selector that is written in different ways:
+对比一下用不同的方式写的CSS选择器的相同名称：
 
 * `menuitemvisible`
 * `menu-item-visible`
 * `menuItemVisible`
 
-To understand the meaning of the first name, you need read through each word carefully. In the last two examples, the name is clearly divided into its parts. But none of these names helps us understand that `menu` is a block, `item` is an element, and `visible` is a modifier. The rules for naming BEM entities were developed in order to make entity names unambiguous and easy to understand.
+要理解名字的含义，需要仔细读懂每个字的意思。在最后两个例子中，名字都明确地划分出了它的各个部分。但这些名称都不能帮助我们理解，`menu` 是一个块，`item` 是一个元素，`visible` 是一个修饰符。BEM实体的命名规则是为了使实体名称不含糊，易于理解而制定的。
 
 ## 命名规则
 
 ` block-name__elem-name_mod-name_mod-val`
 
-* Names are written in lowercase Latin letters.
-* Words are separated by a hyphen (`-`).
-* The block name defines the [namespace](https://en.wikipedia.org/wiki/Namespace) for its elements and modifiers.
-* The element name is separated from the block name by a double underscore (`__`).
-* The modifier name is separated from the block or element name by a single underscore (`_`).
-* The modifier value is separated from the modifier name by a single underscore (`_`).
-* For boolean modifiers, the value is not included in the name.
+* 名字用小写的拉丁字母书写。
+* 词语之间用连字符（`-`）分隔。
+* 块名定义了其元素和修饰符的[命名空间](https://en.wikipedia.org/wiki/Namespace)。
+* 元素名和块名之间用双下划线（`__`）分隔。
+* 修饰符名称与块或元素名称之间用一个下划线（`_`）分隔。
+* 修改器值与修改器名称之间用一个下划线（`_`）分隔。
+* 对于布尔型修改器，其值不包括在名称中。
 
-> **Important:** Elements of elements [do not exist in the BEM methodology](../../faq/faq.en.md#why-not-create-elements-of-elements-block__elem1__elem2). The naming rules do not allow creating elements of elements, but you can nest elements inside each other in the DOM tree.
+> **重要提示：** BEM方法中[不存在元素的元素](/faq/#why-not-create-elements-of-elements-block__elem1__elem2)。命名规则不允许创建元素的元素，但是您可以在DOM树中将元素彼此嵌套。
 
 ### 例子
 
-In HTML, BEM entities are represented by the `class` attribute. In BEM, for any of the technologies, there is a call to the class:
-* [CSS](../bem-for-css/bem-for-css.en.md#selectors)
-* [JavaScript](../bem-for-js/bem-for-js.en.md#dom-representation-of-dynamic-blocks)
-* [templates](../bem-for-html/bem-for-html.en.md#automatic-html-generation)
+在HTML中，BEM实体由`class`属性表示。在BEM中，对于任何一种技术，都有一个类的调用：
 
-Examples of the naming rules are applied to CSS.
+* [CSS](/bem-for-css/#selectors)
+* [JavaScript](/bem-for-js/#dom-representation-of-dynamic-blocks)
+* [templates](/bem-for-html/#automatic-html-generation)
+
+命名规则的例子应用到CSS中。
 
 #### 块名称
 
 `menu`
 
-> [Why don't block names need prefixes?](../history/history.en.md#the-introduction-of-blocks)
+> [为什么块名不需要前缀？](/history/#the-introduction-of-blocks)
 
 *HTML*
 
@@ -55,7 +56,7 @@ Examples of the naming rules are applied to CSS.
 
 `menu__item`
 
-> **Important:** Identical elements in the same block have the same names. For example, all menu items in the menu block are called `menu__item`.
+> **重要：** 同一块中的相同元素有相同的名称。例如：菜单块中的所有菜单项都称为 `menu__item`。
 
 *HTML*
 
@@ -114,9 +115,9 @@ Examples of the naming rules are applied to CSS.
 
 ## 其他命名方案
 
-The naming rules above describe the classic approach to naming BEM entities. All [BEM tools](https://en.bem.info/toolbox/) follow the classic naming scheme by default.
+上面的命名规则描述了BEM实体的经典命名方法。所有的[BEM工具](https://en.bem.info/toolbox/)默认都遵循经典的命名方案。
 
-There are alternative solutions that are actively used in the BEM community. To have all technologies apply identical names that were created using alternative naming schemes, use the [bem-naming](https://github.com/bem/bem-sdk#naming) tool. By default, `bem-naming` is configured to use the methodology's standard naming convention, but it allows you to add rules so you can use alternative schemes.
+有一些替代性的解决方案在BEM社区中被积极使用。要让所有技术应用使用使用替代命名方案创建的相同名称，请使用[bem-naming](https://github.com/bem/bem-sdk#naming)工具。默认情况下，`bem-naming` 被配置为使用方法论的标准命名公约，但它允许您添加规则，以便您可以使用替代方案。
 
 ### 双破折号（-）风格
 

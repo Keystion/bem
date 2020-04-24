@@ -8,7 +8,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 * [块（Block）](#块（block）)
 * [元素（Element）](#元素（element）)
-* [我应该创建一个区块（Block）还是元素（Element）？](#我应该创建一个区块（block）还是元素（element）？)
+* [我应该创建一个块（Block）还是元素（Element）？](#我应该创建一个块（block）还是元素（element）？)
 * [修饰符（Modifier）](#修饰符（modifier）)
 * [混合（Mix）](#混合（mix）)
 * [文件结构（file-structure）](#文件结构（file-structure）)
@@ -211,7 +211,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 </div>
 ```
 
-## 我应该创建一个区块（Block）还是元素（Element）？
+## 我应该创建一个块（Block）还是元素（Element）？
 
 
 ### 创建一个区块

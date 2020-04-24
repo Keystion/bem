@@ -1,40 +1,39 @@
 # 核心概念
 
-- [核心概念](#%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5)
-  - [块](#%e5%9d%97)
-    - [块特征](#%e5%9d%97%e7%89%b9%e5%be%81)
-      - [嵌套结构](#%e5%b5%8c%e5%a5%97%e7%bb%93%e6%9e%84)
-      - [任意位置](#%e4%bb%bb%e6%84%8f%e4%bd%8d%e7%bd%ae)
-      - [重用](#%e9%87%8d%e7%94%a8)
-  - [元素](#%e5%85%83%e7%b4%a0)
-  - [修饰符](#%e4%bf%ae%e9%a5%b0%e7%ac%a6)
-  - [BEM 实体](#bem-%e5%ae%9e%e4%bd%93)
-  - [混合](#%e6%b7%b7%e5%90%88)
-  - [BEM 树](#bem-%e6%a0%91)
-  - [块实现](#%e5%9d%97%e5%ae%9e%e7%8e%b0)
-  - [实现技术](#%e5%ae%9e%e7%8e%b0%e6%8a%80%e6%9c%af)
-  - [块重新定义](#%e5%9d%97%e9%87%8d%e6%96%b0%e5%ae%9a%e4%b9%89)
-  - [重新定义级别](#%e9%87%8d%e6%96%b0%e5%ae%9a%e4%b9%89%e7%ba%a7%e5%88%ab)
+- [块](#块)
+- [块特征](#块特征)
+    - [嵌套结构](#嵌套结构)
+    - [任意位置](#任意位置)
+    - [重用](#重用)
+- [元素](#元素)
+- [修饰符](#修饰符)
+- [BEM 实体](#bem-实体)
+- [混合](#混合)
+- [BEM 树](#bem-树)
+- [块的实施方案](#块的实施方案)
+- [实现技术](#实现技术)
+- [块重新定义](#块重新定义)
+- [重新定义级别](#重新定义级别)
 
 ## 块
 
-A logically and functionally independent page component, the equivalent of a component in Web Components. A block encapsulates behavior (JavaScript), templates, styles (CSS), and other [implementation technologies](#implementation-technology). Blocks being independent allows for their re-use, as well as facilitating the [project development and support process](../solved-problems/solved-problems.en.md).
+一个逻辑上和功能上独立的页面组件，相当于Web Components中的组件。一个块封装了行为（JavaScript）、模板、样式（CSS）和其他[实现技术](#实现技术)。块是独立的，这使得它们可以重复使用，同时也方便了[项目的开发和支持过程](/solved-problems/)。
 
 ### 块特征
 
 #### 嵌套结构
 
-Blocks can be nested inside any other blocks.
+区块可以嵌套在任何其他区块中。
 
-For example, a `head` block can include a logo (`logo`), a search form (`search`), and an authorization block (`auth`).
+例如：一个 `head` 块可以包括一个标志块（`logo`）、一个搜索表单块（`search`）和一个授权块（`auth`）。
 
-![Head block components](/key-concepts/key-concepts__head_marked.png)
+![头块组件](/key-concepts/key-concepts__head_marked.png)
 
 #### 任意位置
 
-Blocks can be moved around on a page, moved between pages or projects. The implementation of blocks as independent entities makes it possible to change their position on the page and ensures their proper functioning and appearance.
+块可以在页面上移动，在页面或项目之间移动。将区块作为独立的实体来实现，使其在页面上的位置变化成为可能，并确保其正常运行和外观。
 
-Thus, the logo and the authorization form can be swapped around without modifying the CSS or JavaScript code of the blocks.
+因此，标志和授权表单可以在不修改 CSS 或 JavaScript 代码的区块的基础上进行互换。
 
 ![Altering the block positions](/key-concepts/key-concepts__head.png)
 
@@ -42,67 +41,65 @@ Thus, the logo and the authorization form can be swapped around without modifyin
 
 #### 重用
 
-An interface can contain multiple instances of the same block.
+一个接口可以包含同一个块的多个实例。
 
-![Online store products](/key-concepts/key-concepts__goods-list.png)
+![网上商店的产品](/key-concepts/key-concepts__goods-list.png)
 
 ## 元素
 
-A constituent part of a [block](#block) that can't be used outside of it.
+[块](#块)的一个组成部分，不能在块之外使用。
 
-For example, a menu item is not used outside of the context of a menu block, therefore it is an element.
+例如：一个菜单项不能在菜单块的上下文之外使用，因此它是一个元素。
 
-![Menu items](/key-concepts/key-concepts__menu-items.png)
+![菜单项目](/key-concepts/key-concepts__menu-items.png)
 
-> [A block or an element: when should I use which?](../../faq/faq.en.md#a-block-or-an-element-which-one-should-i-create)
->
-> [Using elements within elements is not recommended by the BEM methodology](../../faq/faq.en.md#why-not-create-elements-of-elements-block__elem1__elem2)
+> [一个块还是一个元素：什么时候该用哪个？](/faq/#a-block-or-an-element-which-one-should-i-create)
 
 ## 修饰符
 
-A BEM entity that defines the appearance and behavior of a [block](#block) or an [element](#element).
+定义了一个[块](#块)或[元素](#元素)的外观和行为的 BEM 实体。
 
-The use of modifiers is optional.
+修饰符的使用是可选的。
 
-Modifiers are similar in essence to HTML attributes. The same block looks different due to the use of a modifier.
+修饰符本质上类似于HTML属性。由于使用了修饰符，同一个块的外观会有所不同。
 
-For instance, the appearance of the menu block (`menu`) may change depending on a modifier that is used on it.
+例如：菜单块（`菜单`）的外观可能会因使用了修饰符而改变。
 
-![Add a menu to the footer](/key-concepts/key-concepts__site-footer-menu.png)
+![在页脚添加一个菜单](/key-concepts/key-concepts__site-footer-menu.png)
 
-Modifiers can be changed in runtime (for example, as a reaction to a DOM event of the block), or via other blocks.
+修改符可以在运行时改变（例如：作为对块的DOM事件的反应），或者通过其他块来改变。
 
-For example, if the wrong credentials are entered when a user clicks the Sign In button (the 'click' DOM event), the 'visible' modifier is set on a hidden block with error messages.
+例如：如果用户点击签到按钮时输入了错误的凭证（"click"DOM事件），那么 "visible" 修改符就会被设置在一个隐藏的块上，并带有错误信息。
 
 ## BEM 实体
 
 [块（Blocks）](#block)、[元素（elements）](#element)和 [修饰符（modifiers）](#modifier) 都称之为 BEM 实体.
 
-It is a notion that can be used both to refer to an individual BEM entity and as a generic term for blocks, elements, and modifiers.
+它是一个概念，既可以用来指单个的BEM实体，也可以作为块、元素和修饰符的总称。
 
 ## 混合
 
-An instance of different [BEM entities](#bem-entity) being hosted on a single [DOM node](https://en.wikipedia.org/wiki/Document_Object_Model).
+在一个[DOM节点](https://en.wikipedia.org/wiki/Document_Object_Model)上托管不同的[BEM 实体](#bem-实体)的实例。
 
-Mixes allow us to
+混合体使我们能够：
 
-* Combine the behaviors and styles of several BEM entities while avoiding code duplication.
-* Create semantically new interface components on the basis of existing BEM entities.
+* 结合多个BEM实体的行为和风格，同时避免代码重复。
+* 在现有BEM实体的基础上创建新的语义上的接口组件。
 
-Let's consider the case of a mix comprising a block and an element of another block.
+让我们考虑由一个块和另一个块的元素组成的混合体的情况。
 
-Let's assume that links in your project are implemented via a `link` block. We need to format menu items as links. There are several ways to do that.
+让我们假设你的项目中的链接是通过一个 "link "块来实现的。我们需要将菜单项格式化为链接。有几种方法可以做到这一点。
 
-* Create a modifier for a menu item that turns the item into a link. Implementing such a modifier would necessarily involve copying the behavior and styles of the `link` block. That would result in code duplication.
-* Have a mix combining a generic `link` block and a `link` element of a `menu` block. A mix of the two BEM entities will allow us to use the basic link functionality of the `link` block and additional CSS rules of the `menu` block without copying the code.
+* 为一个菜单项创建一个修改器，将该项变成链接。实现这样的修改器必然需要复制 `link` 块的行为和样式。这将导致代码的重复。
+* 将通用的 `link` 块和 `menu` 块的 `link` 元素混合在一起。混合使用这两个BEM实体将使我们能够使用 `link` 块的基本链接功能和 `ment` 块的附加CSS规则，而无需复制代码。
 
 ## BEM 树
 
-A representation of a web page structure in terms of blocks, elements, and modifiers. It is an abstraction over a [DOM tree](https://en.wikipedia.org/wiki/Document_Object_Model) that describes the names of BEM entities, their states, order, nesting, and auxiliary data.
+用块、元素和修饰符来表示网页结构。它是对[DOM树](https://en.wikipedia.org/wiki/Document_Object_Model)的抽象，描述了BEM实体的名称、状态、顺序、嵌套和辅助数据。
 
-In real-life projects, a BEM tree can be presented in any format that supports the tree structure.
+在实际项目中，BEM树可以以任何支持树状结构的格式呈现。
 
-Let's consider an example of a DOM tree:
+让我们考虑一个DOM树的例子：
 
 ```html
 <header class="header">
@@ -122,7 +119,7 @@ Let's consider an example of a DOM tree:
 </header>
 ```
 
-The corresponding BEM tree will look like this:
+对应的BEM树将是这样的：
 
 ```files
 header
@@ -137,7 +134,7 @@ header
             lang-switcher__link
 ```
 
-In XML and [BEMJSON](https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md) formats, the same BEM tree will appear as follows:
+在 XML 和 [BEMJSON](https://github.com/bem/bem-xjst/blob/master/docs/en/4-data.md) 格式中，相同的BEM树将显示如下：
 
 XML
 
@@ -194,7 +191,7 @@ BEMJSON
 }
 ```
 
-## 块实现
+## 块的实施方案
 
 一组不同的[技术](#实现技术)，决定了BEM实体的以下几个方面
 
@@ -204,35 +201,35 @@ BEMJSON
 * 模板
 * 文档
 * 附属关系的描述
-* 额外的数据（例如，图像）。
+* 额外的数据（例如：图像）。
 
 ## 实现技术
 
 用于[实现](#block-implementation)块的技术。
 
-Blocks can be implemented in one or more technologies, for example:
+块可以用一种或多种技术来实现，例如：
 
-* behavior — JavaScript, CoffeeScript
-* appearance — CSS, Stylus, Sass
-* templates — BEMHTML, BH, Pug, Handlebars, XSL
-* documentation — Markdown, Wiki, XML.
+* 行为 - JavaScript, CoffeeScript
+* 外观 - CSS, Stylus, Sass, Sass
+* 模板 - BEMHTML, BH, Pug, Handlebars, XSL
+* 文档 - Markdown, Wiki, XML。
 
-For instance, if the appearance of a block is defined with CSS, that means that the block is implemented in the CSS technology. Likewise, if the documentation for a block is written in Markdown format, the block is implemented in the Markdown technology.
+例如：如果一个块的外观是用CSS定义的，那就意味着这个块是用CSS技术实现的。同样，如果一个块的文档是用Markdown格式编写的，那么这个块也是用Markdown技术实现的。
 
 ## 块重新定义
 
-Modifying a block [implementation](#block-implementation) by adding new features to the block on a different [level](#redefinition-level).
+通过在不同[级别](#重新定义级别)上增加新的功能来修改一个区块的[实施方案](#块的实施方案)。
 
 ## 重新定义级别
 
-A set of BEM entities and their partial [implementations](#block-implementation).
+一套BEM实体及其部分[实施方案](#块的实施方案)；
 
-The final implementation of a block can be divided into different redefinition levels. Each new level extends or overrides the original implementation of the block. The end result is assembled from individual [implementation technologies](#implementation-technology) of the block from all redefinition levels in a pre-determined consecutive order.
+块的最终实现可以分为不同的重新定义级别。每个新的级别都扩展或覆盖了块的原始实现。最终的结果是由所有重新定义级别的块的各个[实现技术](#实现技术)按预定的连续顺序从块的各个实现技术中组装而成。
 
-![Redefinition level](/key-concepts/key-concepts__levels.png)
+![重新定义级别](/key-concepts/key-concepts__levels.png)
 
-Any [implementation](#implementation-technology) technologies of BEM entities can be [redefined](#block-redefinition).
+BEM实体的任何[实现技术](#实现技术)都可以[重新定义](#块重新定义)。
 
-For example, there is a third-party library linked to a project on a separate level. The library contains ready-made block implementations. The project-specific blocks are stored on a different redefinition level.
+例如：有一个第三方库，在一个单独的级别上链接到项目中的第三方库。该库包含了现成的块的实施方案。特定于项目的块存储在不同的重新定义层上。
 
-Let's say we need to modify the appearance of one of the library blocks. That doesn't require changing the CSS rules of the block in the library source code or copying the code at the project level. We only need to create additional CSS rules for that block at the project level. During the build process, the resulting implementation will incorporate both the original rules from the library level and the new styles from the project level.
+假设我们需要修改其中一个库块的外观。这不需要在库源码中改变该块的CSS规则，也不需要在项目级复制代码。我们只需要在项目级为该块创建额外的CSS规则即可。在构建过程中，所产生的实现将包含库级的原始规则和项目级的新样式。
