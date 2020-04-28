@@ -160,4 +160,4 @@ BEM实体的名称是唯一的。同一BEM实体在所有技术（CSS 、 JavaSc
 
 ### 你的命名系统
 
-You can create your own custom naming solution for BEM entities. The most important thing is that your new naming system makes it possible to programmatically separate blocks from elements and modifiers.
+你可以为BEM实体创建自己的自定义命名方案。最重要的是，你的新命名系统使你的新命名系统能够以程序化的方式将块与元素和修饰符分开。
