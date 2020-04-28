@@ -2,6 +2,7 @@ module.exports = {
     title: 'BEM 方法论',
     description: 'Just playing around',
     theme: '@vuepress/theme-default',
+    base: '/bem/',
     themeConfig: {
         search: true,
         searchMaxSuggestions: 10,
