@@ -653,7 +653,7 @@ With the addition of modifiers, we got rid of the `btn` block.
 
 **Example**
 
-![buttons](/bem-for-css/bem-for-css__buttons.svg)
+![buttons](/bem/bem-for-css/bem-for-css__buttons.svg)
 
 As you can see, there are some small external differences between the buttons. The DRY principle is about exactly these types of entities – they are functionally similar, but they have different formatting.
 
@@ -661,7 +661,7 @@ There isn't any reason to combine different types of blocks just because they ha
 
 **Example**
 
-![yellow-blocks](/bem-for-css/bem-for-css__yellow-blocks.svg)
+![yellow-blocks](/bem/bem-for-css/bem-for-css__yellow-blocks.svg)
 
 #### Composition instead of inheritance
 

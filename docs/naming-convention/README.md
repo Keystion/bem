@@ -22,15 +22,15 @@ BEM实体的名称是唯一的。同一BEM实体在所有技术（CSS 、 JavaSc
 * 修改器值与修改器名称之间用一个下划线（`_`）分隔。
 * 对于布尔型修改器，其值不包括在名称中。
 
-> **重要提示：** BEM方法中[不存在元素的元素](/faq/#why-not-create-elements-of-elements-block__elem1__elem2)。命名规则不允许创建元素的元素，但是您可以在DOM树中将元素彼此嵌套。
+> **重要提示：** BEM方法中[不存在元素的元素](/bem/faq/#why-not-create-elements-of-elements-block__elem1__elem2)。命名规则不允许创建元素的元素，但是您可以在DOM树中将元素彼此嵌套。
 
 ### 例子
 
 在HTML中，BEM实体由`class`属性表示。在BEM中，对于任何一种技术，都有一个类的调用：
 
-* [CSS](/bem-for-css/#selectors)
-* [JavaScript](/bem-for-js/#dom-representation-of-dynamic-blocks)
-* [templates](/bem-for-html/#automatic-html-generation)
+* [CSS](/bem/bem-for-css/#selectors)
+* [JavaScript](/bem/bem-for-js/#dom-representation-of-dynamic-blocks)
+* [templates](/bem/bem-for-html/#automatic-html-generation)
 
 命名规则的例子应用到CSS中。
 
@@ -38,7 +38,7 @@ BEM实体的名称是唯一的。同一BEM实体在所有技术（CSS 、 JavaSc
 
 `menu`
 
-> [为什么块名不需要前缀？](/history/#the-introduction-of-blocks)
+> [为什么块名不需要前缀？](/bem/history/#the-introduction-of-blocks)
 
 *HTML*
 
@@ -156,7 +156,7 @@ BEM实体的名称是唯一的。同一BEM实体在所有技术（CSS 、 JavaSc
 * 名称用拉丁字母书写。
 * 块或元素的名称不包括在修饰语之前。
 
-这种命名方案限制了[混合](/key-concepts/#混合)的使用，因为它使人无法确定修改器属于哪个块或元素。
+这种命名方案限制了[混合](/bem/key-concepts/#混合)的使用，因为它使人无法确定修改器属于哪个块或元素。
 
 ### 你的命名系统
 

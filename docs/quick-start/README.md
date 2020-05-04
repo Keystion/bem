@@ -19,7 +19,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征：
 
-* [块名](/naming-convention#块名称)描述它的目的（“它是什么？” - `menu` 或 `button`），而不是它的状态（“它看起来像什么？” - `red` 或 `big`）。
+* [块名](/bem/naming-convention#块名称)描述它的目的（“它是什么？” - `menu` 或 `button`），而不是它的状态（“它看起来像什么？” - `red` 或 `big`）。
 
 **例子**
 
@@ -62,7 +62,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征:
 
-* [元素名称](/naming-convention#元素名称)描述的是它的目的（「这是什么？」-- `项` 、 `文本` 等），而不是它的状态（「什么类型，或者说它是什么样子的？」-- `red`、`big` 等）。
+* [元素名称](/bem/naming-convention#元素名称)描述的是它的目的（「这是什么？」-- `项` 、 `文本` 等），而不是它的状态（「什么类型，或者说它是什么样子的？」-- `red`、`big` 等）。
 * 元素全名的结构是 `block-name__element-name`。元素名与块名之间用双下划线(__)分隔。
 
 **例子**
@@ -120,7 +120,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 </form>
 ```
 
-块名定义了命名空间，[保证](/naming-convention#element-name) 了元素对块的依赖性（`block__elem`）。
+块名定义了命名空间，[保证](/bem/naming-convention#element-name) 了元素对块的依赖性（`block__elem`）。
 
 一个块可以在DOM树上有一个元素的嵌套结构:
 
@@ -230,7 +230,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 特征:
 
-* [修饰符名称](/naming-convention#块的修饰符名称)描述了它的外观（“什么大小？”或 “哪个主题？” 等--`size_s`或 `theme_islands`）、状态（“它和其他的有什么不同？”--`disabled`、`focus`等）和行为（“它的行为如何？”或“它是如何响应用户的？” - 如 `directions_left-top`）。)
+* [修饰符名称](/bem/naming-convention#块的修饰符名称)描述了它的外观（“什么大小？”或 “哪个主题？” 等--`size_s`或 `theme_islands`）、状态（“它和其他的有什么不同？”--`disabled`、`focus`等）和行为（“它的行为如何？”或“它是如何响应用户的？” - 如 `directions_left-top`）。)
 * 修饰符名称与块或元素名称之间用一个下划线(`_`)隔开。
 
 ### 修饰符类型
@@ -349,7 +349,7 @@ BEM（Block，Element，Modifier）是一种基于组件的Web开发方法。它
 
 ## 文件结构（file-structure）
 
-BEM方法中采用的组件方法同样适用于[文件结构中的项目](/filestructure/#file-structure-organization)。块、元素和修改器的实现方式被划分为独立的技术文件，也就是说我们可以将它们单独连接起来。
+BEM方法中采用的组件方法同样适用于[文件结构中的项目](/bem/filestructure/#file-structure-organization)。块、元素和修改器的实现方式被划分为独立的技术文件，也就是说我们可以将它们单独连接起来。
 
 特征:
 
@@ -389,9 +389,9 @@ search-form/                           # `search-form` 的目录
 
 这种文件结构使得代码很容易支持和重用。
 
-> 分支的文件结构假定在生产中，代码将被[组装成共享的项目文件](/build/#建立一个BEM项目)。
+> 分支的文件结构假定在生产中，代码将被[组装成共享的项目文件](/bem/build/#建立一个BEM项目)。
 
-你不需要遵循[推荐的文件结构](/filestructure/#嵌套)。你可以使用任何遵循BEM原则的替代项目结构来组织文件结构，例如：
+你不需要遵循[推荐的文件结构](/bem/filestructure/#嵌套)。你可以使用任何遵循BEM原则的替代项目结构来组织文件结构，例如：
 
-* [扁平化](/filestructure/#扁平化)
-* [灵活性](/filestructure/#灵活性)
+* [扁平化](/bem/filestructure/#扁平化)
+* [灵活性](/bem/filestructure/#灵活性)

@@ -42,7 +42,7 @@ HTML implementation:
 <div class="popup"> ...</div> 
 ```
 
-![Default popup](/block-modification/block-modification__popup-default.svg) 
+![Default popup](/bem/block-modification/block-modification__popup-default.svg) 
 
 ### Changing the block's appearance 
 
@@ -55,7 +55,7 @@ HTML implementation:
 <div class="popup popup_theme_sun"> ...</div> 
 ```
 
-![ Popup window with a yellow background](/block-modification/block-modification__popup-theme-sun.svg) 
+![ Popup window with a yellow background](/bem/block-modification/block-modification__popup-theme-sun.svg) 
 
 ### Changing the block's behavior
 
@@ -70,7 +70,7 @@ HTML implementation:
 <div class="popup popup_direction_right"> ...</div>
 ```
 
-![Popup window to the right](/block-modification/block-modification__popup-right.svg)
+![Popup window to the right](/bem/block-modification/block-modification__popup-right.svg)
 
 ### Changing the block's structure
 
@@ -85,7 +85,7 @@ HTML implementation:
 <div class="popup popup_has-tail"> ...</div>
 ```
 
-![Popup window with a tail](/block-modification/block-modification__popup-with-arrow.svg) 
+![Popup window with a tail](/bem/block-modification/block-modification__popup-with-arrow.svg) 
 
 ### Changing the block's state
 
@@ -98,7 +98,7 @@ HTML implementation:
 <div class="button button_disabled"> ...</div> 
 ```
 
-![Disabled button](/block-modification/block-modification__popup-disabled.svg) 
+![Disabled button](/bem/block-modification/block-modification__popup-disabled.svg) 
 
 ### Adding multiple modifiers 
 
@@ -116,7 +116,7 @@ HTML implementation:
 
 The popup window opens at the bottom and has a yellow background and a tail:
 
-![Popup window with a yellow background and a tail](/block-modification/block-modification__popup-with-arrow-theme-sun.svg) 
+![Popup window with a yellow background and a tail](/bem/block-modification/block-modification__popup-with-arrow-theme-sun.svg) 
 
 ## Using a mix to change a block
 
@@ -130,7 +130,7 @@ In the BEM methodology, a block's position on the page is set in the parent bloc
 
 The example shows a `header` block from an integrated library. By default, the `header` block doesn't know anything about the position of blocks that are nested in it. To add the `logo`, `search`, and `user` blocks to the header, you need to define the offsets for each nested block: 
 
-![Universal header block](/block-modification/block-modification__header-default.svg) 
+![Universal header block](/bem/block-modification/block-modification__header-default.svg) 
 
 The header and the nested `logo`, `search`, and `user` blocks must remain independent. For this reason, the position of the nested blocks is set in elements of the `header` block that are mixed with the blocks.
 
@@ -145,7 +145,7 @@ HTML implementation:
 </header> 
 ```
 
-![Header block with nested blocks](/block-modification/block-modification__header-with-blocks.svg) 
+![Header block with nested blocks](/bem/block-modification/block-modification__header-with-blocks.svg) 
 
 The styles of the nested `logo`, `search`, and `user` blocks haven't changed, and still don't contain any offsets. The blocks remain independent and can be reused anywhere.
 
@@ -188,7 +188,7 @@ Universal blocks from the library should look different in different projects. A
 
 Original implementation of the `button` block in the library:
 
-![Original button implementation](/redefinition-levels/redefinition-levels__button-default.svg) 
+![Original button implementation](/bem/redefinition-levels/redefinition-levels__button-default.svg) 
 
 To change the button color, redefine the CSS rules for the `button` block on the project level (`project.blocks`).
 
@@ -213,7 +213,7 @@ As a result, rules from both redefinition levels will be applied to the `button`
 
 New appearance of the button:
 
-![Redefined button](/redefinition-levels/redefinition-levels__button-redefined.svg) 
+![Redefined button](/bem/redefinition-levels/redefinition-levels__button-redefined.svg) 
 
 > More [examples using redefinition levels](../redefinition-levels/redefinition-levels.en.md#examples-using-redefinition-levels).
 

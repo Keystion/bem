@@ -11,7 +11,7 @@ In a BEM project, the code is divided into [separate files](../filestructure/fil
 
 **Example**
 
-![建立一个BEM项目](/build/build__bem-project.svg)
+![建立一个BEM项目](/bem/build/build__bem-project.svg)
 
 The build performs the following tasks:
 
@@ -36,7 +36,7 @@ The build tool bundles only the BEM entities that are included in the list. The 
 
 **Example**
 
-![Building a BEM project](/build/build__declaration.svg)
+![Building a BEM project](/bem/build/build__declaration.svg)
 
 > For more information on how to create a declaration, see [Ways to get declarations](../declarations/declarations.en.md#ways-of-obtaining-a-declaration).
 
@@ -48,7 +48,7 @@ The build tool gets information about dependencies and adds all the BEM entities
 
 **Example**
 
-![An example of a composite block](/build/build__search-form.svg)
+![An example of a composite block](/bem/build/build__search-form.svg)
 
 > For more information on how to declare dependencies on other BEM entities and technologies, see [Technology for declaring dependencies](https://en.bem.info/platform/deps/).
 
@@ -71,7 +71,7 @@ In BEM, the final block implementation might be distributed across different [re
 
 **Example**
 
-![Redefinition levels](/build/build__levels.svg)
+![Redefinition levels](/bem/build/build__levels.svg)
 
 > For more information about using redefinition levels, see the [Redefinition levels](../redefinition-levels/redefinition-levels.en.md) section.
 

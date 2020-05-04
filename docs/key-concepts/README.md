@@ -17,7 +17,7 @@
 
 ## 块
 
-一个逻辑上和功能上独立的页面组件，相当于Web Components中的组件。一个块封装了行为（JavaScript）、模板、样式（CSS）和其他[实现技术](#实现技术)。块是独立的，这使得它们可以重复使用，同时也方便了[项目的开发和支持过程](/solved-problems/)。
+一个逻辑上和功能上独立的页面组件，相当于Web Components中的组件。一个块封装了行为（JavaScript）、模板、样式（CSS）和其他[实现技术](#实现技术)。块是独立的，这使得它们可以重复使用，同时也方便了[项目的开发和支持过程](/bem/solved-problems/)。
 
 ### 块特征
 
@@ -27,7 +27,7 @@
 
 例如：一个 `head` 块可以包括一个标志块（`logo`）、一个搜索表单块（`search`）和一个授权块（`auth`）。
 
-![头块组件](/key-concepts/key-concepts__head_marked.png)
+![头块组件](/bem/key-concepts/key-concepts__head_marked.png)
 
 #### 任意位置
 
@@ -35,15 +35,15 @@
 
 因此，标志和授权表单可以在不修改 CSS 或 JavaScript 代码的区块的基础上进行互换。
 
-![Altering the block positions](/key-concepts/key-concepts__head.png)
+![Altering the block positions](/bem/key-concepts/key-concepts__head.png)
 
-![Altering the block positions](/key-concepts/key-concepts__head_changed.png)
+![Altering the block positions](/bem/key-concepts/key-concepts__head_changed.png)
 
 #### 重用
 
 一个接口可以包含同一个块的多个实例。
 
-![网上商店的产品](/key-concepts/key-concepts__goods-list.png)
+![网上商店的产品](/bem/key-concepts/key-concepts__goods-list.png)
 
 ## 元素
 
@@ -51,9 +51,9 @@
 
 例如：一个菜单项不能在菜单块的上下文之外使用，因此它是一个元素。
 
-![菜单项目](/key-concepts/key-concepts__menu-items.png)
+![菜单项目](/bem/key-concepts/key-concepts__menu-items.png)
 
-> [一个块还是一个元素：什么时候该用哪个？](/faq/#a-block-or-an-element-which-one-should-i-create)
+> [一个块还是一个元素：什么时候该用哪个？](/bem/faq/#a-block-or-an-element-which-one-should-i-create)
 
 ## 修饰符
 
@@ -65,7 +65,7 @@
 
 例如：菜单块（`菜单`）的外观可能会因使用了修饰符而改变。
 
-![在页脚添加一个菜单](/key-concepts/key-concepts__site-footer-menu.png)
+![在页脚添加一个菜单](/bem/key-concepts/key-concepts__site-footer-menu.png)
 
 修改符可以在运行时改变（例如：作为对块的DOM事件的反应），或者通过其他块来改变。
 
@@ -226,7 +226,7 @@ BEMJSON
 
 块的最终实现可以分为不同的重新定义级别。每个新的级别都扩展或覆盖了块的原始实现。最终的结果是由所有重新定义级别的块的各个[实现技术](#实现技术)按预定的连续顺序从块的各个实现技术中组装而成。
 
-![重新定义级别](/key-concepts/key-concepts__levels.png)
+![重新定义级别](/bem/key-concepts/key-concepts__levels.png)
 
 BEM实体的任何[实现技术](#实现技术)都可以[重新定义](#块重新定义)。
 
