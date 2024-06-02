@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/Keystion/bem.info#readme",
   "devDependencies": {
-    "vuepress": "^1.4.1"
+    "vuepress": "1.4.1"
   }
 }
