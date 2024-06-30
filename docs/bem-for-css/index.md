@@ -1,6 +1,6 @@
 # CSS with BEM
 
-In the BEM methodology, CSS is used for page layout and is considered one of the [block implementation technologies](../key-concepts/key-concepts.en.md#implementation-technology).
+In the BEM methodology, CSS is used for page layout and is considered one of the [block implementation technologies](/key-concepts/#implementation-technology).
 
 The following sections cover the core principles of working with CSS:
 - [CSS with BEM](#css-with-bem)
@@ -37,7 +37,7 @@ Traditionally, HTML wrappers are used for:
 * Positioning HTML elements relative to other elements.
 * Positioning elements inside a section.
 
-The BEM methodology achieves the same results by using [mixes](../key-concepts/key-concepts.en.md#mix), or by creating an additional block element. You don't need to create additional abstract wrappers. They don't add any specific features.
+The BEM methodology achieves the same results by using [mixes](/key-concepts/#mix), or by creating an additional block element. You don't need to create additional abstract wrappers. They don't add any specific features.
 
 #### Positioning a block relative to other blocks
 
@@ -107,7 +107,7 @@ BEM doesn't use tag and ID selectors. The styles of blocks and elements are defi
 
 Use selectors to specify a specific HTML element on the page, regardless of the tag. The class selector is accessed via the `class` attribute, which should be defined for every HTML element.
 
-The value of the `class` attribute can be a space-separated list of words. This allows you to use different [BEM entities](../key-concepts/key-concepts.en.md#bem-entity) on the same DOM node.
+The value of the `class` attribute can be a space-separated list of words. This allows you to use different [BEM entities](/key-concepts/#bem-entity) on the same DOM node.
 
 **Example**
 
@@ -249,7 +249,7 @@ It's harder to make the same assumption with a group of selectors like this:
 
 The names `icon` , `text` , and `theme_islands` aren't very informative.
 
-The general [rules for naming blocks, elements, and modifiers](../naming-convention/naming-convention.en.md) allow you to:
+The general [rules for naming blocks, elements, and modifiers](/naming-convention/) allow you to:
 * Make the names of CSS selectors as informative and clear as possible.
 * Solve the problem of name collisions.
 * Independently define styles for blocks and their optional elements.
@@ -407,7 +407,7 @@ In this example, the text inside the `article` and `copyright` blocks has the sa
 
 Although group selectors do allow you to quickly change the design of the page, this approach tightens code coupling.
 
-This is why BEM uses [mixes](../key-concepts/key-concepts.en.md#mix) to uniformly format an entire set of HTML elements.
+This is why BEM uses [mixes](/key-concepts/#mix) to uniformly format an entire set of HTML elements.
 
 **Example**
 
@@ -435,12 +435,12 @@ CSS implementation:
 
 These basic principles for structuring and storing code are applied to BEM-style CSS:
 * Code is divided into separate parts. The logic of each block and its optional elements and modifiers is defined in separate files.
-* CSS files for each component are stored according to the [rules of file system organization](../filestructure/filestructure.en.md) for a BEM project.
+* CSS files for each component are stored according to the [rules of file system organization](/filestructure/) for a BEM project.
 
 Dividing code into parts and controlling the project's file structure make it possible to:
 * Simplify navigation through the project.
 * Re-use and move components.
-* Work with redefinition levels and [use an assembly](../build/build.en.md).
+* Work with redefinition levels and [use an assembly](/build/).
 
 **Example**
 
@@ -818,4 +818,4 @@ To implement BEM principles in a project:
 * When desigining blocks, follow the principles covered above.
 * Use prefixes in names of CSS classes (such as `bem-`) in order to differentiate the new code from the old code.
 
-Once you are familiar with BEM-style CSS, you can look at the specifics of implementing [BEM for JavaScript](../bem-for-js/bem-for-js.en.md).
+Once you are familiar with BEM-style CSS, you can look at the specifics of implementing [BEM for JavaScript](/bem-for-js/).

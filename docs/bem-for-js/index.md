@@ -1,6 +1,6 @@
 # JavaScript with BEM
 
-In the BEM methodology, JavaScript is used for making a webpage “come alive” and is considered one of the block [implementation technologies](../key-concepts/key-concepts.en.md#implementation-technology).
+In the BEM methodology, JavaScript is used for making a webpage “come alive” and is considered one of the block [implementation technologies](/key-concepts/#implementation-technology).
 
 BEM enforces [additional rules](#javascript-implementation-using-the-bem-methodology) on JavaScript that help to apply all the concepts of the component approach of the BEM methodology.
 
@@ -8,15 +8,15 @@ BEM enforces [additional rules](#javascript-implementation-using-the-bem-methodo
 
 JavaScript is one of the block implementation technologies, so the main concepts of the BEM methodology can be observed when working with JavaScript:
 
-* [Unified subject domain](#unified-subject-domain) — using blocks, elements, and modifiers named according to general [naming conventions](../naming-convention/naming-convention.en.md).
-* [Separating the code into parts](#dividing-the-code-into-parts) and the same [rules for organizing the file structure of a BEM project](../filestructure/filestructure.en.md).
+* [Unified subject domain](#unified-subject-domain) — using blocks, elements, and modifiers named according to general [naming conventions](/naming-convention/).
+* [Separating the code into parts](#dividing-the-code-into-parts) and the same [rules for organizing the file structure of a BEM project](/filestructure/index.html).
 * [Dividing the code by redefinition levels and using assembly](#working-with-redefinition-levels).
 
 ### Unified subject domain
 
 In web development, the final product (such as a webpage) consists of different technologies (HTML, CSS, JS, and so on). In BEM, working with all these technologies uses the same terminology and implementation approaches. This means that the entire team of a BEM project gets a unified language for communication, operating in terms of blocks, elements, and modifiers.
 
-So the JavaScript implementation of blocks doesn’t use the concepts of DOM elements, but uses the next level of abstraction — the [BEM tree](../key-concepts/key-concepts.en.md#bem-tree). The advantage to this is we don’t rely on classes, and can independently describe the behavior of blocks and their optional elements. In JavaScript, modifiers are used for expressing the logic of a block or element (similar to CSS, where modifiers are used for defining appearance). The behavior of blocks and elements is described in JavaScript as a set of states.
+So the JavaScript implementation of blocks doesn’t use the concepts of DOM elements, but uses the next level of abstraction — the [BEM tree](/key-concepts/#bem-tree). The advantage to this is we don’t rely on classes, and can independently describe the behavior of blocks and their optional elements. In JavaScript, modifiers are used for expressing the logic of a block or element (similar to CSS, where modifiers are used for defining appearance). The behavior of blocks and elements is described in JavaScript as a set of states.
 
 Using the same concepts in all the technologies means we can implement various helpers in JavaScript for working with components and avoid hard coding the names of blocks and separators. This approach allows us to, for example, find all the elements with a particular name within the scope of a block, set a modifier for them, and check its value.
 
@@ -61,7 +61,7 @@ In a BEM project, you can’t change the states in runtime by using modifiers an
 
 Switching a block from one state to another often causes changes in its appearance. If the CSS uses a modifier to define the block’s appearance, changing the block state called by the same modifier will automatically apply all the necessary styles.
 
-In BEM, the response to setting or removing a modifier is described [declaratively](../bem-js-principles/bem-js-principles.en.md#declarative-style). So, for example, if an additional class (or modifier) appears in the CSS during execution, all of this modifier’s properties are automatically applied to the DOM node of this class. The same thing occurs in JavaScript: if a modifier appears (a new class is added to the DOM node), the entire functionality of this modifier is applied. If the modifier disappears, the functionality is disabled.
+In BEM, the response to setting or removing a modifier is described [declaratively](/bem-js-principles/index.html#declarative-style). So, for example, if an additional class (or modifier) appears in the CSS during execution, all of this modifier’s properties are automatically applied to the DOM node of this class. The same thing occurs in JavaScript: if a modifier appears (a new class is added to the DOM node), the entire functionality of this modifier is applied. If the modifier disappears, the functionality is disabled.
 
 To dynamically change the states of blocks and elements, we use special methods for setting and removing modifiers.
 
@@ -95,7 +95,7 @@ This approach allows us to:
 We can apply the main BEM principles for organizing and storing code to JavaScript:
 
 * Dividing code into separate parts — each block’s logic and its optional elements and modifiers are described in separate files.
-* JavaScript files for each component are stored according to the [rules for organizing the file structure](../filestructure/filestructure.en.md) of a BEM project.
+* JavaScript files for each component are stored according to the [rules for organizing the file structure](/filestructure/index.html) of a BEM project.
 
 **Example**
 
@@ -149,7 +149,7 @@ Dividing the code into parts and strictly organizing the project’s file struct
 
 ### Working with redefinition levels
 
-The documentation for the BEM methodology provides [many examples](../redefinition-levels/redefinition-levels.en.md#examples-using-redefinition-levels) where the final CSS implementation of a block is assembled from different redefinition levels. Applying BEM principles to JavaScript allows us to similarly divide a block’s behavior into different levels:
+The documentation for the BEM methodology provides [many examples](/redefinition-levels/index.html#examples-using-redefinition-levels) where the final CSS implementation of a block is assembled from different redefinition levels. Applying BEM principles to JavaScript allows us to similarly divide a block’s behavior into different levels:
 
 * Implement new block functionality on a different redefinition level while preserving the previous block behavior, inheriting it and extending it (make a super call).
 * Completely override the block behavior (redefine it).
@@ -223,8 +223,8 @@ To immediately use all the BEM concepts in your project, you need to:
 Declarative JavaScript in a BEM project is shown by the following:
 
 * The behavior of each block is described separately.
-* The block states are set declaratively. When [changing states](../bem-for-js/bem-for-js.en.md#response-to-changes-in-modifiers), the code is automatically called that is declared for this state.
-* The block’s logic is described as a set of actions and conditions for performing these actions. This makes it possible to separate the block’s functionality into individual parts and use [redefinition levels](../key-concepts/key-concepts.en.md#redefinition-level).
+* The block states are set declaratively. When [changing states](/bem-for-js/index.html#response-to-changes-in-modifiers), the code is automatically called that is declared for this state.
+* The block’s logic is described as a set of actions and conditions for performing these actions. This makes it possible to separate the block’s functionality into individual parts and use [redefinition levels](/key-concepts/#redefinition-level).
 
 > [More information about applying redefinition levels in JavaScript](#working-with-redefinition-levels)
 
@@ -250,7 +250,7 @@ You can also create inheritance chains, meaning that a block inherits from anoth
 
 Blocks with JavaScript implementation can correspond to nodes in HTML. We refer to this as the **blocks having a DOM representation**.
 
-In the simplest case, a block has a one-to-one relationship with a DOM node. However, a DOM node and a block are not always equivalent. You can put multiple blocks on the same DOM node (this is called a [mix](../key-concepts/key-concepts.en.md#mix)), or implement a single block on multiple DOM nodes.
+In the simplest case, a block has a one-to-one relationship with a DOM node. However, a DOM node and a block are not always equivalent. You can put multiple blocks on the same DOM node (this is called a [mix](/key-concepts/#mix)), or implement a single block on multiple DOM nodes.
 
 There are also **blocks without DOM representation**. In JavaScript, they are presented as objects with their own methods.
 

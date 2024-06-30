@@ -7,7 +7,7 @@
 
 ## What is a redefinition level?
 
-A **redefinition level** is a directory in a BEM project that contains files for implementing [blocks](../key-concepts/key-concepts.en.md#block), [elements](../key-concepts/key-concepts.en.md#element), and [modifiers](../key-concepts/key-concepts.en.md#modifier).
+A **redefinition level** is a directory in a BEM project that contains files for implementing [blocks](/key-concepts/#block), [elements](/key-concepts/#element), and [modifiers](/key-concepts/#modifier).
 
 Any BEM project consists of redefinition levels. Every project must have at least one level, but the maximum number of levels is unlimited.
 
@@ -22,11 +22,18 @@ project/
 
 Redefinition rules allow you to:
 
-* [Divide a project into platforms](#dividing-a-project-into-platforms)
-* [Easily update libraries of blocks that are integrated into the project](#updating-connected-libraries-of-blocks)
-* [Use common blocks for developing different projects](#developing-projects-with-common-blocks)
-* [Change the design theme without affecting the project logic](#creating-design-themes)
-* [Perform experiments on a live project](#running-experiments-on-a-live-project)
+- [Redefinition levels](#redefinition-levels)
+  - [What is a redefinition level?](#what-is-a-redefinition-level)
+  - [What are redefinition levels used for?](#what-are-redefinition-levels-used-for)
+    - [Adding blocks to a project](#adding-blocks-to-a-project)
+    - [Changing the block implementation](#changing-the-block-implementation)
+  - [How to use redefinition levels](#how-to-use-redefinition-levels)
+  - [Examples using redefinition levels](#examples-using-redefinition-levels)
+    - [Dividing a project into platforms](#dividing-a-project-into-platforms)
+    - [Updating connected libraries of blocks](#updating-connected-libraries-of-blocks)
+    - [Developing projects with common blocks](#developing-projects-with-common-blocks)
+    - [Creating design themes](#creating-design-themes)
+    - [Running experiments on a live project](#running-experiments-on-a-live-project)
 
 ## What are redefinition levels used for?
 
@@ -52,7 +59,7 @@ project/
         button/     # button block 
 ```
 
-As the result of [building the project](../build/build.en.md), the `button` block will be included in the project: 
+As the result of [building the project](/build/), the `button` block will be included in the project: 
 
 ```css
 @import "common.blocks/header/header.css";  /* header from the common project block level */
@@ -60,7 +67,7 @@ As the result of [building the project](../build/build.en.md), the `button` bloc
 @import "library.blocks/button/button.css"; /* button from the library level */
 ```
 
-> More about [building BEM projects and integrating BEM entities into a project](../build/build.en.md).
+> More about [building BEM projects and integrating BEM entities into a project](/build/).
 
 ### Changing the block implementation
 
@@ -187,11 +194,18 @@ The image shows the project build for different platforms, depending on the [use
 ## Examples using redefinition levels
 
 Common ways to use redefinition levels:
-* [Divide a project by platform](#dividing-a-project-into-platforms)
-* [Update libraries of blocks in a project](#updating-connected-libraries-of-blocks)
-* [Develop projects using common blocks](#developing-projects-with-common-blocks)
-* [Create different design themes for a project](#creating-design-themes)
-* [Run experiments on a live project](#running-experiments-on-a-live-project)
+- [Redefinition levels](#redefinition-levels)
+  - [What is a redefinition level?](#what-is-a-redefinition-level)
+  - [What are redefinition levels used for?](#what-are-redefinition-levels-used-for)
+    - [Adding blocks to a project](#adding-blocks-to-a-project)
+    - [Changing the block implementation](#changing-the-block-implementation)
+  - [How to use redefinition levels](#how-to-use-redefinition-levels)
+  - [Examples using redefinition levels](#examples-using-redefinition-levels)
+    - [Dividing a project into platforms](#dividing-a-project-into-platforms)
+    - [Updating connected libraries of blocks](#updating-connected-libraries-of-blocks)
+    - [Developing projects with common blocks](#developing-projects-with-common-blocks)
+    - [Creating design themes](#creating-design-themes)
+    - [Running experiments on a live project](#running-experiments-on-a-live-project)
 
 ### Dividing a project into platforms
 

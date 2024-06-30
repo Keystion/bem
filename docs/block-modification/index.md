@@ -1,6 +1,6 @@
 # Ways to modify a block
 
-[Blocks](../key-concepts/key-concepts.en.md#block) — logically and functionally independent, reusable page components. The same blocks can be used in different projects. To prevent these projects from looking identical, blocks can be modified using:
+[Blocks](/key-concepts/#block) — logically and functionally independent, reusable page components. The same blocks can be used in different projects. To prevent these projects from looking identical, blocks can be modified using:
 
 * [Modifiers](#using-a-modifier-to-change-a-block) 
 * [Mixes](#using-a-mix-to-change-a-block) 
@@ -76,7 +76,7 @@ HTML implementation:
 
 The `has-tail` modifier with the `true` value adds to the `popup` block a new element — ”tail“. This modifier also adds offsets to the block to create space for the tail.
 
-> Information about when and how to use a [boolean modifier](../../faq/faq.en.md#when-to-create-a-boolean-modifier-and-when-to-create-a-key-value-modifier).
+> Information about when and how to use a [boolean modifier](/faq/index.html#when-to-create-a-boolean-modifier-and-when-to-create-a-key-value-modifier).
 
 HTML implementation:
 
@@ -120,13 +120,13 @@ The popup window opens at the bottom and has a yellow background and a tail:
 
 ## Using a mix to change a block
 
-The block is changed by placing additional BEM entities on the same DOM node as the block. [Mixes](../key-concepts/key-concepts.en.md#mix) allow you to combine the behavior and style of multiple entities without duplicating code.
+The block is changed by placing additional BEM entities on the same DOM node as the block. [Mixes](/key-concepts/#mix) allow you to combine the behavior and style of multiple entities without duplicating code.
 
 ### Placing a block inside another block
 
 In the BEM methodology, a block's position on the page is set in the parent block. This allows the blocks to be independent and reusable.
 
-> More information about [external geometry and positioning](../bem-for-css/bem-for-css.en.md#external-geometry-and-positioning).
+> More information about [external geometry and positioning](/bem-for-css/index.html#external-geometry-and-positioning).
 
 The example shows a `header` block from an integrated library. By default, the `header` block doesn't know anything about the position of blocks that are nested in it. To add the `logo`, `search`, and `user` blocks to the header, you need to define the offsets for each nested block: 
 
@@ -153,7 +153,7 @@ The styles of the nested `logo`, `search`, and `user` blocks haven't changed, an
 
 Mixes are used to keep styles consistent in a set of different HTML elements on the page.
 
-> Information about [why BEM doesn't use global modifiers](../../faq/faq.en.md#how-to-make-global-modifiers-for-blocks).
+> Information about [why BEM doesn't use global modifiers](/faq/index.html#how-to-make-global-modifiers-for-blocks).
 
 In the example, the text inside the `article` and `copyright` blocks needs to have the same color and font. To do this, you can mix the `text` block, which has styles defining the text color and font, with the `article` and `copyright` blocks.
 
@@ -178,9 +178,9 @@ CSS implementation:
 
 ## Using redefinition levels to change a block
 
-Changes are made to the block by combining the block properties from different [redefinition levels](../key-concepts/key-concepts.en.md#redefinition-level). Blocks can be [extended and redefined](../redefinition-levels/redefinition-levels.en.md#changing-the-block-implementation). Changes to a block are defined on a separate level and applied during assembly. 
+Changes are made to the block by combining the block properties from different [redefinition levels](/key-concepts/#redefinition-level). Blocks can be [extended and redefined](/redefinition-levels/index.html#changing-the-block-implementation). Changes to a block are defined on a separate level and applied during assembly. 
 
-> More information about [how redefinition levels work](../redefinition-levels/redefinition-levels.en.md).
+> More information about [how redefinition levels work](/redefinition-levels/index.html).
 
 ### Example
 
@@ -215,7 +215,7 @@ New appearance of the button:
 
 ![Redefined button](/redefinition-levels/redefinition-levels__button-redefined.svg) 
 
-> More [examples using redefinition levels](../redefinition-levels/redefinition-levels.en.md#examples-using-redefinition-levels).
+> More [examples using redefinition levels](/redefinition-levels/index.html#examples-using-redefinition-levels).
 
 ## Using context to change a block
 

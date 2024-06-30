@@ -48,13 +48,13 @@ If you can't find the answer to your question, please contact us [in the forum](
 
 ## How does BEM differ from OOCSS, AMCSS, SMACSS, SUITCSS?
 
-1. BEM is applicable to [JavaScript](../method/bem-for-js/bem-for-js.en.md) as well as [CSS](../method/bem-for-css/bem-for-css.en.md).
+1. BEM is applicable to [JavaScript](/bem-for-js/) as well as [CSS](/bem-for-css/index.html).
 
 2. BEM has more in common with [Web Components](https://www.webcomponents.org) than with the CSS solutions listed.
 
 3. BEM provides a comprehensive solution for creating the architecture for your project and helps organize development processes.
 
-   > Read more in the section [Using BEM to solve common issues in web development](../method/solved-problems/solved-problems.en.md).
+   > Read more in the section [Using BEM to solve common issues in web development](/solved-problems/index.html).
 
 ## What is the difference between BEM and Web Components?
 
@@ -66,7 +66,7 @@ If you can't find the answer to your question, please contact us [in the forum](
 **Encapsulation**
 
 * Web Components use Shadow DOM.
-* BEM uses the [elements](../method/key-concepts/key-concepts.en.md#element) of a block.
+* BEM uses the [elements](/key-concepts/#element) of a block.
 
 **Template execution**
 
@@ -84,9 +84,9 @@ If you can't find the answer to your question, please contact us [in the forum](
 
 * In Web Components, [Custom Elements](https://www.w3.org/TR/custom-elements/) are used. This approach allows only for one component to be hosted on a single DOM node.
 
-* BEM uses the [BEM tree](../method/key-concepts/key-concepts.en.md#bem-tree). This approach allows you to place multiple components ([BEM entities](../method/key-concepts/key-concepts.en.md#bem-entity))  on a single DOM node.
+* BEM uses the [BEM tree](/key-concepts/#bem-tree). This approach allows you to place multiple components ([BEM entities](/key-concepts/#bem-entity))  on a single DOM node.
 
-   > Read more in the section about [mixes](../method/key-concepts/key-concepts.en.md#mix).
+   > Read more in the section about [mixes](/key-concepts/#mix).
 
 ## What is the difference between BEM and Bootstrap?
 
@@ -106,7 +106,7 @@ There are also a number of open source libraries:
 
 ## A block or an element: which one should I create?
 
-The BEM methodology does not establish strict rules for creating blocks and elements. Much will depend on the specific implementations and personal preferences of the developer. Review the [recommendations](../method/quick-start/quick-start.en.md#should-i-create-a-block-or-an-element) and choose what is right for you.
+The BEM methodology does not establish strict rules for creating blocks and elements. Much will depend on the specific implementations and personal preferences of the developer. Review the [recommendations](/quick-start/index.html#should-i-create-a-block-or-an-element) and choose what is right for you.
 
 ## How to change the appearance of a block?
 
@@ -157,10 +157,10 @@ The name of the block in the names of modifiers and elements:
 
 For convenience of development and support of the project, the file structure of a BEM project is divided into nested directories and files.
 
-You can follow the [recommended project structure](../method/filestructure/filestructure.en.md#nested) or use any alternative:
+You can follow the [recommended project structure](/filestructure/index.html#nested) or use any alternative:
 
-* [Flat](../method/filestructure/filestructure.en.md#flat)
-* [Flex](../method/filestructure/filestructure.en.md#flex)
+* [Flat](/filestructure/index.html#flat)
+* [Flex](/filestructure/index.html#flex)
 
 ## Do block elements inherit the block's CSS properties?
 
@@ -174,13 +174,13 @@ To give the elements different properties, define CSS rules separately for each 
 
 Abstract wrappers are not necessary, because the tasks they would solve are implemented using mixes and additional block elements.
 
-> Read more in the section [BEM for HTML](../method/bem-for-html/bem-for-html.en.md).
+> Read more in the section [BEM for HTML](/bem-for-html/).
 
 ## Why not create elements of elements (block\__elem1\__elem2)?
 
 The existence of elements of elements hinders the ability to change the internal structure of the block. Elements cannot be swapped around, removed or added without modifying the existing code.
 
-> Read more in the section [Quick start](../method/quick-start/quick-start.en.md#guidelines-for-using-elements).
+> Read more in the section [Quick start](/quick-start/index.html#guidelines-for-using-elements).
 
 ## A modifier or a mix: which one should I create?
 
@@ -197,7 +197,7 @@ If the implementation you need is for a specific context and it definitely won't
 For example, in most cases a mix is ​​created if:
 
 * The implementation is for a specific business logic of the project.
-* An [external geometry](../method/bem-for-css/bem-for-css.en.md#external-geometry-and-positioning) is defined for this context.
+* An [external geometry](/bem-for-css/index.html#external-geometry-and-positioning) is defined for this context.
 
 ## When to create a Boolean modifier, and when to create a key-value modifier?
 
@@ -244,9 +244,9 @@ The name `button_background_yellow` is not informative because:
 
 BEM does not accommodate the concept of global modifiers, because any modifier name always contains the name of a block or element.
 
-If a CSS property needs to be moved outside of a block and applied to different BEM entities in the project, a separate block should be created that is implemented in the CSS technology. Then you can combine the implementation of different blocks using [mixes](../method/key-concepts/key-concepts.en.md#mix):
+If a CSS property needs to be moved outside of a block and applied to different BEM entities in the project, a separate block should be created that is implemented in the CSS technology. Then you can combine the implementation of different blocks using [mixes](/key-concepts/#mix):
 
-> Read more in the section [Styling groups of blocks](../method/bem-for-css/bem-for-css.en.md#styling-groups-of-blocks).
+> Read more in the section [Styling groups of blocks](/bem-for-css/index.html#styling-groups-of-blocks).
 
 ## Why isn't the name of the block modifier written in the element name (block_mod__elem)?
 
@@ -340,19 +340,19 @@ The CSS classes on the DOM node are modified using JavaScript.
 
 Combining a tag and a class in one selector increases its CSS specificity. The BEM methodology does not recommend combining tags and classes in a selector.
 
-> Read more in the section [Combining a tag and a class in a selector](../method/bem-for-css/bem-for-css.en.md#combining-a-tag-and-a-class-in-a-selector).
+> Read more in the section [Combining a tag and a class in a selector](/bem-for-css/index.html#combining-a-tag-and-a-class-in-a-selector).
 
 ## Can I use nested selectors?
 
 Nested selectors increase code coupling and make reuse impossible. The BEM methodology allows nested selectors, but recommends keeping their use to a minimum.
 
-> Read more in the section [Nested selectors](../method/bem-for-css/bem-for-css.en.md#nested-selectors).
+> Read more in the section [Nested selectors](/bem-for-css/index.html#nested-selectors).
 
 ## Can I use combined selectors?
 
 Combined selectors have a higher CSS specificity compared to single selectors. The success of redefining these selectors is strongly tied to the order in which they are declared. The BEM methodology does not recommend the use of combined selectors.
 
-> Read more in the section [Combined selectors](../method/bem-for-css/bem-for-css.en.md#combined-selectors).
+> Read more in the section [Combined selectors](/bem-for-css/index.html#combined-selectors).
 
 ## Can I use selectors for user-defined tags?
 
@@ -381,7 +381,7 @@ icon-twitter {}
 
 There are several limitations to this approach:
 
-* You can't use [ mixes](../method/key-concepts/key-concepts.en.md#mix).
+* You can't use [ mixes](/key-concepts/#mix).
 * Not all blocks can be represented by user-defined HTML tags. For example, all links must have the `  <a>  ` tag, and fields must have `  <input>  ` .
 
 ## Why shouldn't I use a CSS Reset?
@@ -408,7 +408,7 @@ A modifier determines the state of the block or element, which can change during
 
 ## When should I create helper blocks?
 
-The BEM methodology does not establish strict rules for creating helper blocks. Much will depend on the specific implementations and personal preferences of the developer. If such a block is necessary, you can use [a mix](../method/key-concepts/key-concepts.en.md#mix).
+The BEM methodology does not establish strict rules for creating helper blocks. Much will depend on the specific implementations and personal preferences of the developer. If such a block is necessary, you can use [a mix](/key-concepts/#mix).
 
 An example of a helper block in [ bem-core](https://en.bem.info/platform/libs/bem-core/) is the `clearfix`block, and in [bem-components](https://en.bem.info/platform/libs/bem-components/) an example is ` z-index-group`.
 
@@ -416,7 +416,7 @@ An example of a helper block in [ bem-core](https://en.bem.info/platform/libs/be
 
 To keep a component independent, the CSS properties that prevent its reuse in other contexts (such as `margin` and `position`) are set via the parent block.
 
-> Read more in the section [External geometry and positioning](../method/bem-for-css/bem-for-css.en.md#external-geometry-and-positioning)
+> Read more in the section [External geometry and positioning](/bem-for-css/index.html#external-geometry-and-positioning)
 
 ## Why use i-bem.js when you have jQuery?
 

@@ -2,7 +2,7 @@
 
 All BEM projects follow a similar structure in their file structure. When files are always in a familiar location, this makes it easier for developers to navigate a project and switch between projects.
 
-In BEM, the [block](../key-concepts/key-concepts.en.md#block) is primary, and [technologies](../key-concepts/key-concepts.en.md#implementation-technology) are secondary.
+In BEM, the [block](/key-concepts/#block) is primary, and [technologies](/key-concepts/#implementation-technology) are secondary.
 
 The BEM methodology has several approaches to organizing the project's file system:
 
@@ -20,9 +20,9 @@ The choice is up to the developer.
     - [Block implementation consists of separate files](#block-implementation-consists-of-separate-files)
     - [Files are grouped by meaning, not by type](#files-are-grouped-by-meaning-not-by-type)
   - [Approaches](#approaches)
-    - [嵌套](#%e5%b5%8c%e5%a5%97)
-    - [扁平化](#%e6%89%81%e5%b9%b3%e5%8c%96)
-    - [灵活性](#%e7%81%b5%e6%b4%bb%e6%80%a7)
+    - [嵌套](#嵌套)
+    - [扁平化](#扁平化)
+    - [灵活性](#灵活性)
 
 ### Projects consist of redefinition levels
 
@@ -51,7 +51,7 @@ project
         input.js    # JavaScript implementation of the input block
 ```
 
-The code of modifiers and elements is also stored in separate files of the block. This approach allows you to [include](../build/build.en.md) just the modifiers and elements that are needed for this implementation of the block. 
+The code of modifiers and elements is also stored in separate files of the block. This approach allows you to [include](/build/) just the modifiers and elements that are needed for this implementation of the block. 
 
 **Example**
 

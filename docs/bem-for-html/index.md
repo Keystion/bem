@@ -8,7 +8,7 @@ When using BEM, you can create HTML markup [manually](#creating-html-manually) o
 
 ## Binding blocks to a DOM node
 
-The page markup is described in terms of [blocks](../key-concepts/key-concepts.en.md#block), [elements](../key-concepts/key-concepts.en.md#element) and [modifiers](../key-concepts/key-concepts.en.md#modifier).
+The page markup is described in terms of [blocks](/key-concepts/#block), [elements](/key-concepts/#element) and [modifiers](/key-concepts/#modifier).
 
 To specify that a block, an element or a modifier is located on a DOM node, its name is written in the `class` attribute.
 
@@ -20,7 +20,7 @@ In the simplest case, a single DOM node corresponds to a single block:
 
 ### Several blocks on one DOM node
 
-To combine the styles and behavior of several [BEM entities](../key-concepts/key-concepts.en.md#bem-entity), place them on the same DOM node. To do this, add the names of the BEM entities separated with spaces in the `class` attribute. This approach is called a [mix](../key-concepts/key-concepts.en.md#mix).
+To combine the styles and behavior of several [BEM entities](/key-concepts/#bem-entity), place them on the same DOM node. To do this, add the names of the BEM entities separated with spaces in the `class` attribute. This approach is called a [mix](/key-concepts/#mix).
 
 For instance, you can use a mix to add a modifier to a block or an element. In this example, a mix is used to add new styles to the `menu` block by applying the `menu_theme_bright` modifier to this block.
 
@@ -28,7 +28,7 @@ For instance, you can use a mix to add a modifier to a block or an element. In t
 <span class="menu menu_theme_bright"></span>
 ```
 
-> [Learn more about mixes](../bem-for-css/bem-for-css.en.md#mixes)
+> [Learn more about mixes](/bem-for-css/#mixes)
 
 ### One block on multiple DOM nodes
 
@@ -38,7 +38,7 @@ For JavaScript tasks, such as simultaneous initialization of a block instance in
 
 ## Nesting of elements
 
-[The naming convention](../naming-convention/naming-convention.en.md#naming-convention) [doesn't allow](../../faq/faq.en.md#why-not-create-elements-of-elements-block__elem1__elem2) including the hierarchy in the element name (`block__elem1__elem2`). But you can nest HTML elements in each other. The nesting depth isn't limited.
+[The naming convention](/naming-convention/#naming-convention) [doesn't allow](/faq/#why-not-create-elements-of-elements-block__elem1__elem2) including the hierarchy in the element name (`block__elem1__elem2`). But you can nest HTML elements in each other. The nesting depth isn't limited.
 
 In this example, the menu items are shown as links. This block structure is implemented with nested elements:
 
@@ -52,11 +52,11 @@ In this example, the menu items are shown as links. This block structure is impl
 
 ## Using HTML wrappers
 
-The BEM methodology does not recommend using HTML wrappers to [position one block relative to another block](#positioning-a-block-relative-to-other-blocks) or [position blocks within another block](#positioning-html-elements-inside-a-block). For these purposes, always use [mixes](../key-concepts/key-concepts.en.md#mix).
+The BEM methodology does not recommend using HTML wrappers to [position one block relative to another block](#positioning-a-block-relative-to-other-blocks) or [position blocks within another block](#positioning-html-elements-inside-a-block). For these purposes, always use [mixes](/key-concepts/#mix).
 
 ### Positioning a block relative to other blocks
 
-To position a block relative to other blocks, use a [mix](../key-concepts/key-concepts.en.md#mix).
+To position a block relative to other blocks, use a [mix](/key-concepts/#mix).
 
 In the example, the `header`  and `footer`  blocks are positioned on the page using a mix with the `page` block elements that set the styles. The `page__header`  and `page__footer` elements are optional. They are applied to the `page` block to add the header (`header`) or the footer (`footer`) to the page. The `page`, `header`  and `footer` blocks remain independent because they don't contain styles that deal with mutual positioning.
 
@@ -130,7 +130,7 @@ Templates in BEM are written declaratively. This allows us to apply the main pri
 
 ### Unified subject domain
 
-Templates are defined in terms of blocks, elements, and modifiers. For this purpose, there is an additional abstraction level above the DOM tree for working with templates: the [BEM tree](../key-concepts/key-concepts.en.md#bem-tree). The BEM tree defines the names of BEM entities, along with their states, order, and nesting. The template engine uses this information to build a node tree for a block's HTML markup.
+Templates are defined in terms of blocks, elements, and modifiers. For this purpose, there is an additional abstraction level above the DOM tree for working with templates: the [BEM tree](/key-concepts/#bem-tree). The BEM tree defines the names of BEM entities, along with their states, order, and nesting. The template engine uses this information to build a node tree for a block's HTML markup.
 
 The BEM tree can use any format that supports a hierarchical tree structure.
 
@@ -171,7 +171,7 @@ header
 
 ### Dividing the code into parts
 
-Template code is stored in separate block files according to the [file structure organization rules](../filestructure/filestructure.en.md) for a BEM project.
+Template code is stored in separate block files according to the [file structure organization rules](/filestructure/) for a BEM project.
 
 You can create templates for an entire block, or for separate elements or modifiers.
 
@@ -215,7 +215,7 @@ HTML implementation of the `menu` block after applying the templates:
 
 ### Using redefinition levels
 
-Use [redefinition levels](../key-concepts/key-concepts.en.md#redefinition-level) to:
+Use [redefinition levels](/key-concepts/#redefinition-level) to:
 
 * [Redefine an entire template or sections of it](#redefining-a-template)
 * [Add HTML elements to the block markup](#adding-additional-html-elements)

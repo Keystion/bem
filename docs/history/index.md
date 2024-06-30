@@ -89,19 +89,19 @@ ID and tag name selectors were used at the same time:
     #foot div    
     {        
         height: 71px;        
-        background: transparent url(../i/foot-1.png) 4% 50% no-repeat;    
+        background: transparent url(/i/foot-1.png) 4% 50% no-repeat;    
     }    
 
     #foot div div    
     {        
         background-position: 21%;        
-        background-image: url(../i/foot-2.png);    
+        background-image: url(/i/foot-2.png);    
     }    
 
     #foot div div div    
     {        
         background-position: 38%;        
-        background-image: url(../i/foot-3.png);    
+        background-image: url(/i/foot-3.png);    
         }
 /* Background images (end) */
 ```
@@ -458,9 +458,9 @@ This approach allows us to release service versions with different versions of L
 CSS files linked from web pages consisted mostly of block implementation `@import`s.
 
 ```css
-@import url(../../block/l-head/l-head.css);
-@import url(../../block/b-head-logo/b-head-logo.css);
-@import url(../../block/b-head-logo/b-head-logo_name.css);
+@import url(/../block/l-head/l-head.css);
+@import url(/../block/b-head-logo/b-head-logo.css);
+@import url(/../block/b-head-logo/b-head-logo_name.css);
 @import url(block/b-head-logo-auto.css);
 ```
 
@@ -655,23 +655,23 @@ All Lego components are described in the XML file.
 It is used to generate CSS files.
 
 ```css
-@import url(../../common/block/global/_type/global_reset.css);
-@import url(../../common/block/l-head/l-head.css);
-@import url(../../common/block/b-head-logo/b-head-logo.css);
-@import url(../../common/block/b-head-logo/name/b-head-logo.name.css);
-@import url(../../common/block/b-head-tabs/b-head-tabs.css);
-@import url(../../common/block/b-dropdown/b-dropdown.css);
-@import url(../../common/block/b-dropdown/text/b-dropdown.text.css);
-@import url(../../common/block/b-pseudo-link/b-pseudo-link.css);
-@import url(../../common/block/b-dropdown/arrow/b-dropdown.arrow.css);
-@import url(../../common/block/b-head-search/b-head-search.css);
-@import url(../../common/block/b-search/b-search.css);
-@import url(../../common/block/b-search/input/b-search.input.css);
-@import url(../../common/block/b-search/sample/b-search.sample.css);
-@import url(../../common/block/b-search/precise/b-search.precise.css);
-@import url(../../common/block/b-search/button/b-search.button.css);
-@import url(../../common/block/b-head-userinfo/b-head-userinfo.css);
-@import url(../../common/block/b-user/b-user.css);
+@import url(/../common/block/global/_type/global_reset.css);
+@import url(/../common/block/l-head/l-head.css);
+@import url(/../common/block/b-head-logo/b-head-logo.css);
+@import url(/../common/block/b-head-logo/name/b-head-logo.name.css);
+@import url(/../common/block/b-head-tabs/b-head-tabs.css);
+@import url(/../common/block/b-dropdown/b-dropdown.css);
+@import url(/../common/block/b-dropdown/text/b-dropdown.text.css);
+@import url(/../common/block/b-pseudo-link/b-pseudo-link.css);
+@import url(/../common/block/b-dropdown/arrow/b-dropdown.arrow.css);
+@import url(/../common/block/b-head-search/b-head-search.css);
+@import url(/../common/block/b-search/b-search.css);
+@import url(/../common/block/b-search/input/b-search.input.css);
+@import url(/../common/block/b-search/sample/b-search.sample.css);
+@import url(/../common/block/b-search/precise/b-search.precise.css);
+@import url(/../common/block/b-search/button/b-search.button.css);
+@import url(/../common/block/b-head-userinfo/b-head-userinfo.css);
+@import url(/../common/block/b-user/b-user.css);
 @import url(block/b-head-logo/b-head-logo.css);
 @import url(block/b-head-search/b-head-search.css);
 ```
@@ -817,7 +817,7 @@ For example, you can set different separators between the block name and the ele
 After experimenting with template engines, we developed [BEMHTML](https://en.bem.info/platform/bem-xjst/), which allows you to:
 
 1. Write templates using BEM terminology.
-2. Redefine them on [redefinition levels](../key-concepts/key-concepts.en.md#redefinition-level).
+2. Redefine them on [redefinition levels](/key-concepts/#redefinition-level).
 3. Use these templates both on the server and in the browser, because the templates are compiled into simple and fast JavaScript.
 
 ## Summary

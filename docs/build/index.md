@@ -7,7 +7,7 @@
 
 ## Introduction
 
-In a BEM project, the code is divided into [separate files](../filestructure/filestructure.en.md#guidelines-for-the-file-structure-of-a-bem-project) (the source files). To combine the source files into a single file (for example, to put all CSS files in `project.css`, all JS files in `project.js`, and so on), we use the build process. The resulting files are called **bundles** in the BEM methodology.
+In a BEM project, the code is divided into [separate files](/filestructure/index.html#guidelines-for-the-file-structure-of-a-bem-project) (the source files). To combine the source files into a single file (for example, to put all CSS files in `project.css`, all JS files in `project.js`, and so on), we use the build process. The resulting files are called **bundles** in the BEM methodology.
 
 **Example**
 
@@ -16,7 +16,7 @@ In a BEM project, the code is divided into [separate files](../filestructure/fil
 The build performs the following tasks:
 
 * Combines source files that are spread out across the project's file system.
-*  Includes only the necessary blocks, elements, and modifiers in the project ([BEM entities](../key-concepts/key-concepts.en.md#bem-entity)).
+*  Includes only the necessary blocks, elements, and modifiers in the project ([BEM entities](/key-concepts/#bem-entity)).
 * Follows the order for including entities.
 * Processes the source code during the build process (for example, compiles [LESS code](https://en.wikipedia.org/wiki/Less_(stylesheet_language)) into CSS code).
 
@@ -30,7 +30,7 @@ To receive bundles as the result of the build, define the following:
 
 ### The list of BEM entities
 
-To include only the necessary BEM entities in the build, you need to create a list of blocks, elements, and modifiers used on the pages. This list is called a [declaration](../declarations/declarations.en.md). It allows you to get rid of unnecessary code that increases the bundle size.
+To include only the necessary BEM entities in the build, you need to create a list of blocks, elements, and modifiers used on the pages. This list is called a [declaration](/declarations/index.html). It allows you to get rid of unnecessary code that increases the bundle size.
 
 The build tool bundles only the BEM entities that are included in the list. The example below shows bundling based on the declaration.
 
@@ -38,7 +38,7 @@ The build tool bundles only the BEM entities that are included in the list. The 
 
 ![Building a BEM project](/build/build__declaration.svg)
 
-> For more information on how to create a declaration, see [Ways to get declarations](../declarations/declarations.en.md#ways-of-obtaining-a-declaration).
+> For more information on how to create a declaration, see [Ways to get declarations](/declarations/index.html#ways-of-obtaining-a-declaration).
 
 ### Defining dependencies
 
@@ -67,13 +67,13 @@ In BEM, dependencies can affect the order of including BEM entities in the build
 
 #### Redefinition levels and the order of including BEM entities in the build
 
-In BEM, the final block implementation might be distributed across different [redefinition levels](../key-concepts/key-concepts.en.md#redefinition-level). They allow you to change the representation and behavior of the blocks for different platforms.  Each subsequent level extends or overrides the original block implementation. Therefore the original implementation has to be included in the build first, and then changes can be applied from all the redefinition levels. The example below shows a project with redefinition levels: `common.blocks`, `desktop.blocks` and `touch.blocks`. The build order is marked with numbers.
+In BEM, the final block implementation might be distributed across different [redefinition levels](/key-concepts/#redefinition-level). They allow you to change the representation and behavior of the blocks for different platforms.  Each subsequent level extends or overrides the original block implementation. Therefore the original implementation has to be included in the build first, and then changes can be applied from all the redefinition levels. The example below shows a project with redefinition levels: `common.blocks`, `desktop.blocks` and `touch.blocks`. The build order is marked with numbers.
 
 **Example**
 
 ![Redefinition levels](/build/build__levels.svg)
 
-> For more information about using redefinition levels, see the [Redefinition levels](../redefinition-levels/redefinition-levels.en.md) section.
+> For more information about using redefinition levels, see the [Redefinition levels](/redefinition-levels/index.html) section.
 
 ## Build result
 

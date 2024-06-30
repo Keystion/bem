@@ -1,6 +1,6 @@
 # 利用BEM解决Web开发中的常见问题
 
-The BEM methodology defines [CSS selector naming conventions](../naming-convention/naming-convention.en.md) that solve a range of web development problems and address the following issues:
+The BEM methodology defines [CSS selector naming conventions](/naming-convention/) that solve a range of web development problems and address the following issues:
 
 - [利用BEM解决Web开发中的常见问题](#%e5%88%a9%e7%94%a8bem%e8%a7%a3%e5%86%b3web%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
   - [如何简化代码促进重构?](#%e5%a6%82%e4%bd%95%e7%ae%80%e5%8c%96%e4%bb%a3%e7%a0%81%e4%bf%83%e8%bf%9b%e9%87%8d%e6%9e%84)
@@ -51,11 +51,11 @@ In order to find out whether styles can be painlessly changed for the `.active` 
 
 **Solution**
 
-The BEM methodology solves the collision issue using [naming conventions for CSS classes](../naming-convention/naming-convention.en.md#css-selector-naming-convention), providing unique names for all components and their parts.
+The BEM methodology solves the collision issue using [naming conventions for CSS classes](/naming-convention/#css-selector-naming-convention), providing unique names for all components and their parts.
 
 Using naming conventions allows us to:
 
-* Define unique names for [BEM entities](../key-concepts/key-concepts.en.md#bem-entity).
+* Define unique names for [BEM entities](/key-concepts/#bem-entity).
 * Track hierarchical relationships within a block.
 * Simplify the code.
 * Get [self-documenting code](#how-to-get-self-documenting-code).
@@ -117,9 +117,9 @@ One of the goals of BEM is to make it clear what a piece of code does just by th
 
 Using BEM, you can get HTML with class names that show the interaction of the following parts of code:
 
-* Independent [blocks](../key-concepts/key-concepts.en.md#block).
-* [Elements](../key-concepts/key-concepts.en.md#element) (child components) of a block.
-* [Modifiers](../key-concepts/key-concepts.en.md#modifier) of a block or an element.
+* Independent [blocks](/key-concepts/#block).
+* [Elements](/key-concepts/#element) (child components) of a block.
+* [Modifiers](/key-concepts/#modifier) of a block or an element.
 
 Here is an example with a search form on a website. We won't look at the HTML. We'll try to just read the CSS and understand which part of the interface it describes.
 
@@ -156,7 +156,7 @@ Let's write the CSS for classes:
 
 The code is more informative. Now it is clear that there is a form, a field, and a `submit` component. But these names still don't tell us whether `field` belongs to `form`, or what will happen if there are multiple fields or forms on the page. Once again we must return to the HTML.
 
-We'll rewrite the example using [BEM naming conventions](../naming-convention/naming-convention.en.md):
+We'll rewrite the example using [BEM naming conventions](/naming-convention/):
 
 ```css
 .form {}
@@ -234,7 +234,7 @@ Using cascades increases coupling of interface components of the interface. You 
 
 **Solution**
 
-[CSS selector naming rules](../naming-convention/naming-convention.en.md) make it possible to change specific points without affecting dependent components. In BEM, every block has a unique name and is self-sufficient.
+[CSS selector naming rules](/naming-convention/) make it possible to change specific points without affecting dependent components. In BEM, every block has a unique name and is self-sufficient.
 
 Let's write the same code in conformance with BEM naming rules:
 
@@ -319,7 +319,7 @@ The consequence is that the developer has to support more lines of code, and fix
 
 **Solution**
 
-We'll use an example that implements a universal navigation menu block and follows all the [BEM naming rules](../naming-convention/naming-convention.en.md).
+We'll use an example that implements a universal navigation menu block and follows all the [BEM naming rules](/naming-convention/).
 
 ```html
 <ul class="nav">
@@ -333,7 +333,7 @@ This block could be used, for example, for navigating articles in a news section
 
 Let's assume that the news section already has the `articles` block with all the necessary CSS rules.
 
-We can use a [mix](../key-concepts/key-concepts.en.md#mix) to combine the implementation of the two different blocks without copying code. In other words, host the `nav` block and the `articles__nav` element on the same DOM node.
+We can use a [mix](/key-concepts/#mix) to combine the implementation of the two different blocks without copying code. In other words, host the `nav` block and the `articles__nav` element on the same DOM node.
 
 The code will look like this:
 
@@ -347,4 +347,4 @@ The code will look like this:
 
 This implementation allows combining the functionality of the `nav` block with the specific implementation of the `articles__nav` element (the appearance of news articles in the menu). However, there is no need to copy the existing CSS rules. If a bug is detected, only one part of the code will have to be fixed.
 
-> In addition to blocks and elements, you can mix other BEM entities, as well. For more information about ways to use mixes in BEM, see the section [Basic BEM concepts](../key-concepts/key-concepts.en.md#mix).
+> In addition to blocks and elements, you can mix other BEM entities, as well. For more information about ways to use mixes in BEM, see the section [Basic BEM concepts](/key-concepts/#mix).
