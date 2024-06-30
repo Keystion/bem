@@ -3,25 +3,30 @@
 In the BEM methodology, CSS is used for page layout and is considered one of the [block implementation technologies](../key-concepts/key-concepts.en.md#implementation-technology).
 
 The following sections cover the core principles of working with CSS:
-* [HTML for CSS](#html-for-css)
-  * [How do I make an HTML wrapper?](#how-do-i-make-an-html-wrapper)
-* [Selectors](#selectors)
-  * [Class selectors](#class-selectors)
-  * [Combining a tag and a class in a selector](#combining-a-tag-and-a-class-in-a-selector)
-  * [Nested selectors](#nested-selectors)
-  * [Combined selectors](#combined-selectors)
-  * [Naming](#naming)
-* [Modifiers](#modifiers)
-* [Mixes](#mixes)
-  * [External geometry and positioning](#external-geometry-and-positioning)
-  * [Styling groups of blocks](#styling-groups-of-blocks)
-* [Dividing the code into parts](#dividing-code-into-parts)
-  * [Single responsibility principle](#single-responsibility-principle)
-  * [Open/closed principle](#openclosed-principle)
-  * [DRY](#dry)
-  * [Composition instead of inheritance](#composition-instead-of-inheritance)
-* [Dividing code by redefinition levels and building an assembly](#working-with-redefinition-levels)
-* [How to migrate from CSS to BEM](#how-to-switch-to-bem-style-css)
+- [CSS with BEM](#css-with-bem)
+  - [HTML for CSS](#html-for-css)
+    - [How do I make an HTML wrapper?](#how-do-i-make-an-html-wrapper)
+      - [Positioning a block relative to other blocks](#positioning-a-block-relative-to-other-blocks)
+      - [Positioning elements inside a block](#positioning-elements-inside-a-block)
+  - [Selectors](#selectors)
+    - [Class selectors](#class-selectors)
+    - [Combining a tag and a class in a selector](#combining-a-tag-and-a-class-in-a-selector)
+    - [Nested selectors](#nested-selectors)
+      - [Valid use cases](#valid-use-cases)
+    - [Combined selectors](#combined-selectors)
+    - [Naming](#naming)
+  - [Modifiers](#modifiers)
+  - [Mixes](#mixes)
+    - [External geometry and positioning](#external-geometry-and-positioning)
+    - [Styling groups of blocks](#styling-groups-of-blocks)
+  - [Dividing code into parts](#dividing-code-into-parts)
+    - [Single responsibility principle](#single-responsibility-principle)
+    - [Open/closed principle](#openclosed-principle)
+    - [DRY](#dry)
+      - [Composition instead of inheritance](#composition-instead-of-inheritance)
+  - [Working with redefinition levels](#working-with-redefinition-levels)
+  - [How to switch to BEM-style CSS](#how-to-switch-to-bem-style-css)
+    - [How to start using BEM concepts in an existing project](#how-to-start-using-bem-concepts-in-an-existing-project)
 
 ## HTML for CSS
 
@@ -653,7 +658,7 @@ With the addition of modifiers, we got rid of the `btn` block.
 
 **Example**
 
-![buttons](/bem/bem-for-css/bem-for-css__buttons.svg)
+![buttons](/bem-for-css/bem-for-css__buttons.svg)
 
 As you can see, there are some small external differences between the buttons. The DRY principle is about exactly these types of entities – they are functionally similar, but they have different formatting.
 
@@ -661,7 +666,7 @@ There isn't any reason to combine different types of blocks just because they ha
 
 **Example**
 
-![yellow-blocks](/bem/bem-for-css/bem-for-css__yellow-blocks.svg)
+![yellow-blocks](/bem-for-css/bem-for-css__yellow-blocks.svg)
 
 #### Composition instead of inheritance
 

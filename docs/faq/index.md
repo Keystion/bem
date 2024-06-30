@@ -188,7 +188,7 @@ The existence of elements of elements hinders the ability to change the internal
 
 If the implementation you need can be reused and does not depend on the implementation of other page components. For example, a `select` block has the modifiers: **hovered**, **pressed**, **disabled**, **focused**, and **opened**.
 
-![Modifiers of the select block](/bem/faq/faq_create_modifier.svg)
+![Modifiers of the select block](/faq/faq_create_modifier.svg)
 
 ### Create a mix
 

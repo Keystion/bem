@@ -78,7 +78,7 @@ You can use any number of levels in any order for assembling the final block imp
 
 The diagram shows how to add BEM entities from different redefinition levels to the build:
 
-![how redefinition levels work](/bem/redefinition-levels/redefinition-levels__levels.svg)
+![how redefinition levels work](/redefinition-levels/redefinition-levels__levels.svg)
 
 The example below shows how to change the `button` block from a third-party library that is connected to the project on a separate level (`library.blocks`): 
 
@@ -108,7 +108,7 @@ CSS implementation:
 
 Rendered result:
 
-![button-default](/bem/redefinition-levels/redefinition-levels__button-default.svg)
+![button-default](/redefinition-levels/redefinition-levels__button-default.svg)
 
 To make changes, you need to:
 
@@ -166,7 +166,7 @@ The duplicated property (`background-color`) is redefined (the background color 
 
 New button appearance:
 
-![Redefined button](/bem/redefinition-levels/redefinition-levels__button-redefined.svg)
+![Redefined button](/redefinition-levels/redefinition-levels__button-redefined.svg)
 
 Result:
 
@@ -182,7 +182,7 @@ The example shows how to [divide up a project by platform using redefinition lev
 
 The image shows the project build for different platforms, depending on the [user agent](https://en.wikipedia.org/wiki/User_Agent):
 
-![Redefinition levels](/bem/build/build__levels.svg)
+![Redefinition levels](/build/build__levels.svg)
 
 ## Examples using redefinition levels
 

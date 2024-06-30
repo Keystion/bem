@@ -8,8 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "pnpm run docs:dev",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,6 @@
   },
   "homepage": "https://github.com/Keystion/bem.info#readme",
   "devDependencies": {
-    "vuepress": "1.4.1"
+    "vitepress": "^1.2.3"
   }
 }
